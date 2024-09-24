@@ -1,0 +1,255 @@
+\documentclass[openany]{book}
+%% PAQUETES %%
+\usepackage[utf8]{inputenc}
+\usepackage{titling}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{amssymb}
+%\usepackage{ulem}
+\usepackage{ragged2e}
+\usepackage{fancyhdr}
+\usepackage{hyphenat}
+\usepackage{titlesec}
+\usepackage{mathtools}
+\usepackage{wrapfig}
+\usepackage{cancel}
+
+
+\setlength{\textwidth}{130mm}
+\setlength{\textheight}{190mm}
+\graphicspath{img/}
+
+
+%% RE ESTILIZACION DE COMNADOS
+\titleformat
+{\chapter} % command
+[display] % shape
+{\sc\Large} % format
+{Unidad \thechapter} % label
+{0.1pt} % sep
+{
+    \rule{\textwidth}{0.5pt}
+    \vspace{0.2ex}
+    \centering
+} % before-code
+\renewcommand{\labelitemi}{$\succ$}
+\renewcommand{\chaptermark}[1]{\markboth{\sc #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\sc #1}}
+
+\fancyhf{}
+\lhead[\thepage]{\rightmark}
+\rhead[\leftmark]{\thepage}
+\renewcommand{\headrulewidth}{0.1mm}
+\cfoot{{\it Estadística Aplicada}}
+\renewcommand{\footrulewidth}{0.1mm}
+
+\allowhyphens
+
+\begin{document}
+
+
+\begin{titlepage}
+	\centering
+	{\bfseries\LARGE Universidad Nacional de La Plata \par}
+	\vspace{1cm}
+	{\scshape\Large Facultad de Ciencias Astronómicas y Geofíscias \par}
+	\vspace{3cm}
+	{\scshape\Huge Estadística Aplicada \par}
+	\vspace{3cm}
+	{\itshape\Large Resumen teórico \par}
+	\vfill
+	{\Large Autor: \par}
+	{\Large Lorenzo Girotti \par}
+	\vfill
+	{\Large 2024 \par}
+\end{titlepage}
+
+\chapter{Probabilidad}
+\section{Definiciones}
+Antes que nada, vamos a definir conceptos que utilizaremos a lo largo del resumen.
+\begin{itemize}
+  \item \textbf{Variable aleatoria:} Es el resultado de un experimento aleatorio, que puede ser por ejemplo la acción de lanzar un dado y ver qué número queda en la cara superior. En notación, diremos que X es una variable aleatoria y la denotaremos por $\mathrm{X}$.
+  \item \textbf{Variable determinista:} Es un valor que podemos \emph{determinar} (valga la redundancia) y usualmente asumiremos que se comportan como números reales o subconjuntos de los mismos. Las notamos como $x$.
+  \item \textbf{Espacio muestral o universo:} Representa la totalidad de los posibles resultados de un experimento aleatorio, normalmente lo notaremos como $E$ o $U$.
+  \item \textbf{Eventos mutuamente excluyentes:} Un \emph{evento} lo podemos pensar como un suceso o algo que puede ocurrir. Cuando tenemos dos o más eventos que tienen la característica de que no pueden coexistir o suceder al mismo tiempo decimos que son \emph{mutuamente excluyentes}. Por ejemplo: \sf{sea el evento A que salga cruz; y el evento B que salga cara. A y B son eventos mutuamente excluyentes en el experimento de lanzar una moneda}.
+  \item \rm{\textbf{Probabilidad empírica:} Dado un evento que sea resultado de un experimento aleatorio que consiste en $n$ pruebas, definimos la probabilidad de que ocurra ese evento como:
+  \begin{equation}
+    \label{eq:prob-emp}
+    P(\mathrm{X})=\frac{\#X}{n}
+  \end{equation}
+		siendo $\#X$ la cantidad de veces que ocurre el evento aleatorio $\mathrm{X}$.} 
+\end{itemize}
+\section{Reglas de probabilidad y resultados importantes}
+  \begin{itemize}
+  \item \textbf{Probabilidad aditiva:} \begin{equation}
+	P(A)+P(B)-P(A\cap B)
+	\label{eq:prob-aditiva}
+  .\end{equation}
+  en caso de que sean \emph{mutuamente excluyentes}, $P(A\cap B)=0$
+  \item \textbf{Probabilidad conjunta:} \begin{equation}
+	P(A\cap B)=P(A|B)P(B)
+	\label{eq:prob-conj}
+  \end{equation}
+  si $A$ y $B$ son \emph{estadísticamente independientes}, entonces $P(A|B)=P(A)$ y $P(A\cap B)=P(A)P(B)$.
+  \item \textbf{Probabilidad total:} Dado un espacio muestral compuesto de $n$ subconjuntos: $E=A_1\cup\cdots\cup A_{n}$, la probabilidad de que ocurra un evento $B$ dentro del espacio, es \begin{equation}
+	P(B)=\sum_{i=1}^{n}P(B\cap A_{i})
+  ,\end{equation}
+  considerando que es la unión de todas las intersecciones entre $B$ y los subconjuntos $A_{i}$ y asumiendo que los mismos son \emph{mutuamente excluyentes}. Si tenemos en cuenta la \refeq{eq:prob-conj}, la probabilidad total queda \begin{equation}
+	P(B)=\sum_{i=1}^{n}P(B|A_{i})P(A_{i})
+	\label{eq:prob-total}
+  .\end{equation}
+  \item \textbf{Teorema de Bayes:} Sean $A_{i}$ como en el ítem anterior, \begin{equation}
+	P(A_{i}|B)=\frac{P(B|A_{i})P(A_{i})}{P(B)}
+	\label{eq:bayes}
+  \end{equation}
+\end{itemize}
+
+\chapter{Variable aleatoria}
+
+\section{Función de distribución de una variable aleatoria}
+Si consideramos una variable aleatoria discreta, definimos a su \emph{función de distribución} como 
+\begin{equation}
+	\label{eq:func-distr-discreta}
+	P(\mathrm{X}<x)=\sum_{i=1}^{k(x_k<x)}P(\mathrm{X}=x_i)
+.\end{equation}
+\par Si la variable aleatoria es continua, se define la función de densidad lineal de probabilidad:
+\begin{equation}
+  f(x)dx=P(x\leq\mathrm{X}<x+dx)
+  \label{eq:densidad-de-prob}
+\end{equation}
+Notar que para una función continua no tiene sentido hablar de la probabilidad de que $\rm{X}$ sea igual a un valor determinado. Sí diremos que la variable aleatoria se encuentra en un intervalo infinitesimal de posibilidades.
+\par Podemos relacionar la \emph{densidad de probabilidad} con la \emph{distribución} de la variable a través de:
+\begin{equation}
+  \label{eq:fyF}
+  f(x)=\frac{dF(x)}{dx}
+\end{equation}.
+Tener en cuenta que 
+\begin{equation*}
+  f(x)\geq0;\qquad \int_{-\infty}^{\infty}f(x)dx=1
+\end{equation*}.
+
+\par De esta manera, podemos calcular la probabilidad acumulada de una variable aleatoria continua a través de su función de densidad de probabilidad.
+\begin{gather}
+  \label{eq:Fx-ft}
+  F(x)=\int_{-\infty}^{x}f(t)dt.\\
+  P(x_1<\mathrm{X}<x_2)=F(x_2)-F(x_1)=\int_{x_1}^{x_2}f(x)dx.
+\end{gather}
+Notar que
+\begin{equation*}
+  F(-\infty)=\int_{-\infty}^{-\infty}f(x)dx=0;\qquad F(\infty)=\int_{-\infty}^{\infty}f(x)dx=1.
+\end{equation*}
+
+\section{Operador Esperanza y parámetros de variables aleatorias}
+Definimos al \emph{operador esperanza} como:
+\begin{equation*}
+  E[H(\mathrm{X})]=\sum_{i=1}^{n}H(x_i)P(\mathrm{X}=x_i)
+\end{equation*}
+si X es discreta.
+\begin{equation*}
+  E\left[H(\mathrm{X})\right]=\int_{-\infty}^{\infty}H(x)f(x)dx
+\end{equation*}
+si X es continua.
+\par El operador es \emph{lineal}, es decir:
+\begin{gather*}
+  E\left[\mathrm{X}+\mathrm{Y}\right]=E\left[\mathrm{X}\right]+E\left[\mathrm{Y}\right]\\
+  E\left[c\mathrm{X}\right]=cE\left[\mathrm{X}\right],
+\end{gather*}
+donde $c$ es una constante.
+
+\subsection{Momentos de orden}
+Dado un $H(\mathrm{X})=(\mathrm{X}-c)^{l}$, el valor esperado $E\left[H(\mathrm{X})\right]$ se llama \emph{momento de orden $l$} de una variable con respecto a $c$.
+\par Si tomamos a $c=\mu$ siendo $\mu$ la media de una variable, definimos $\mu_{l}=E\left[(\mathrm{X}-\mu)^{l}\right]$ y tenemos:
+
+\begin{align*}
+  \mu_0=1\quad &\\
+  \mu_1=0\quad &\\
+  \mu_2=E\left[(\mathrm{X}-\mu)^2\right]=\sigma^2\quad &\mathrm{Varianza}\\
+  \mu_3=E\left[(\mathrm{X}-\mu)^3\right]\quad &\textrm{Sesgo de X}\\
+  \mu_4=E\left[(\mathrm{X}-\mu)^4\right]\quad &\textrm{Curtosis de X}\\
+  \vdots\quad &
+\end{align*}
+
+Nota: $E\left[\mathrm{X}\right]=\mu$
+
+\par Cada \emph{momento} define mejor el comportamiento de la variable.
+
+\subsection{Variable normalizada}
+Una variable normalizada es aquella que tiene media cero y varianza uno.
+\begin{equation}
+  \label{eq:variable-normalizada}
+  \mathrm{u}=\frac{\mathrm{X}-\mu}{\sigma_{\mathrm{X}}}
+\end{equation}
+
+\subsection{Desigualdad de Chebychev}
+\begin{equation}
+  \label{eq:Chebychev}
+  P(\mathrm{|\mathrm{x}-\mu|>k\sigma})\leq\frac{1}{k^2}
+\end{equation}
+siendo $k\in\mathbb{R}$.
+\par La desigualdad nos da una idea probabilística de nuestra variable $\mathrm{X}$, conociendo solo su media y varianza (sin importar cual es su función de probabilidad o probabilidad asociada). Por ejemplo: si elegimos $k=3$, tenemos el \emph{criterio de los tres sigmas} para descartar \emph{outlayers}.
+
+\section{Transformación de variables}
+Si tenemos una transformación de variable $\mathrm{Y(X)}$ biyectiva, \emph{la probabilidad en intervalos equivalentes se conserva}, esto implica
+\begin{gather*}
+  P(x\leq\mathrm{X}<x+dx)=P(y\leq\mathrm{Y}<y+dy)\\
+  f(x)dx=g(y)dy
+\end{gather*}.
+\par Entonces podemos definir la densidad de probabilidad de $g$ como
+\begin{equation}
+  \label{eq:gdy}
+  g(y)=\left|\frac{dx}{dy}\right|f(x)
+\end{equation}.
+Gráficamente podemos decir que hay una \emph{igualdad de áreas}.
+
+\section{Multivariables}
+Todo el análisis que se realiza para una variable aleatoria, puede extenderse a una idea multivariable.
+
+\subsection{Función de distribución}
+Siendo dos variables continuas, tenemos:
+\subsubsection*{Función de densidad de probabilidad conjunta}
+\begin{equation}
+  f(x,y)=\frac{\partial }{\partial x}\frac{\partial }{\partial y}F(x,y),
+  \label{eq:f_xy}
+\end{equation}
+y,
+\begin{equation}
+  P(a\leq\mathrm{X}<b,c\leq\mathrm{y}<d)=\int_{a}^{b}\left[\int_{c}^{d}f(x,y)dy\right]dx.
+\end{equation}
+
+\subsubsection*{Función de densidad de probabilidad marginal}
+Se consideran todos los valores posibles para una variable, dejando una densidad de probabilidad con única dependencia de la otra.
+\begin{equation}
+  \label{eq:marginal}
+  g(x)=\int_{-\infty}^{\infty}f(x,y)dy
+\end{equation}
+tenemos entonces,
+\begin{equation}
+  P(a\leq\mathrm{X}<b,-\infty<y<\infty)=\int_{a}^{b}\left[\int_{-\infty}^{\infty}f(x,y)dy\right]dx=\int_{a}^{b}g(x)dx
+\end{equation}
+
+\subsubsection*{Independencia de variables}
+Dos varaibles se dicen independientes \emph{estadísticamente} si
+\begin{equation}
+  \label{eq:independent}
+  f(x,y)=g(x)h(y)
+\end{equation}
+donde $g(x)$ y $h(y)$ son las funciones de densidad marginales.
+
+\subsubsection*{Probabilidad condicional}
+Partimos de la base de encontrar:
+\begin{equation*}
+  P(y\leq\mathrm{Y}<y+dy\,|\,x\leq\mathrm{X}<x+dx)
+\end{equation*}
+
+La función de densidad de probabilidad de Y si X:
+\begin{equation}
+  \label{eq:densidad-condicional}
+  f(y|x)=\frac{f(x,y)}{g(x)}
+\end{equation}
+
+\end{document}
+
+
