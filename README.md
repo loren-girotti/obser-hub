@@ -5,7 +5,7 @@
 ---
 ## Lista de contenidos:
 - [ ] [Prácticas de compu](Computacion/) (_work in progress_)
-- [x] [Resumen estadística](latex-notes/estadistica/)
+- [ ] [Resumen estadística](latex-notes/estadistica/main.pdf)
 
 
 Hecho por [Lorenzo Girotti](mailto:lorenzogirotti00@gmail.com)
