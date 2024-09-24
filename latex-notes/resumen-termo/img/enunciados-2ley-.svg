@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generado por Microsoft Visio, SVG Export enunciados-2ley-.svg Page-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="7.48031in" height="1.9685in"
+		viewBox="0 0 538.583 141.732" xml:space="preserve" color-interpolation-filters="sRGB" class="st13">
+	<v:documentProperties v:langID="11274" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvNoAutoConnect" v:val="VT0(1):26"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:url(#ptrn10-4);shape-rendering:crispEdges;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#000000;font-family:Tahoma;font-size:1.00001em}
+		.st3 {baseline-shift:-32.4941%;font-size:0.649882em}
+		.st4 {fill:url(#ptrn16-10);shape-rendering:crispEdges;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st5 {fill:#a5a5a5;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.98;stroke-width:0.75}
+		.st6 {fill:url(#ptrn2-28);shape-rendering:crispEdges;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st7 {marker-end:url(#mrkr5-40);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st8 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.22935779816514}
+		.st9 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:7.2}
+		.st10 {fill:#000000;font-family:Calibri;font-size:0.666664em}
+		.st11 {baseline-shift:-32.4939%;font-size:0.649878em}
+		.st12 {fill:#000000;font-family:Calibri;font-size:0.666664em;font-style:italic;font-weight:bold}
+		.st13 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Patterns_And_Gradients">
+		<pattern id="ptrn10-4" v:fillPattern="10" v:foreground="#0c0c0c" v:background="#bfbfbf" patternUnits="userSpaceOnUse"
+				width="6" height="6" viewBox="0 0 64 64">
+			<image x="0" y="0" width="64" height="64" image-rendering="optimizeSpeed"
+					xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAeSURBVChTY+Dh4fm/f/9+OEbnM+CSgPGHgwn7/wMACBetceerjWQAAAAASUVORK5CYII="/>
+		</pattern>
+		<pattern id="ptrn16-10" v:fillPattern="16" v:foreground="#595959" v:background="#ffffff" patternUnits="userSpaceOnUse"
+				width="6" height="6" viewBox="0 0 64 64">
+			<image x="0" y="0" width="64" height="64" image-rendering="optimizeSpeed"
+					xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAoSURBVChTY/gPBZGRkWAMAzA+WAEuSRBgwCcJAmAFMIBN8cC7IfI/AEq1wMHyXBFYAAAAAElFTkSuQmCC"/>
+		</pattern>
+		<pattern id="ptrn2-28" v:fillPattern="2" v:foreground="#a5a5a5" v:background="#ffffff" patternUnits="userSpaceOnUse"
+				width="6" height="6" viewBox="0 0 64 64">
+			<image x="0" y="0" width="64" height="64" image-rendering="optimizeSpeed"
+					xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA+SURBVChTfY/BDQAgCMTYfxYGuy3OHFEjCvZDoP1gAFihu7vT5p5YUvMJTilScEuxg0qKCDop4otOCvtJABxB7/Lp/N2F6AAAAABJRU5ErkJggg=="/>
+		</pattern>
+	</defs>
+	<defs id="Markers">
+		<g id="lend5">
+			<path d="M 2 1 L 0 0 L 1.98117 -0.993387 C 1.67173 -0.364515 1.67301 0.372641 1.98465 1.00043 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr5-40" class="st8" v:arrowType="5" v:arrowSize="2" v:setback="7.63" refX="-7.63" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend5" transform="scale(-4.36,-4.36) "/>
+		</marker>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Página-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="Conector" v:index="0"/>
+		<g id="shape50-1" v:mID="50" v:groupContext="shape" transform="translate(28.3465,-113.386)">
+			<title>Hoja.50</title>
+			<desc>T1</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="113.386" cy="131.102" width="226.78" height="21.2598"/>
+			<rect x="0" y="120.472" width="226.772" height="21.2598" class="st1"/>
+			<text x="107.75" y="134.7" class="st2" v:langID="11274"><v:paragraph v:horizAlign="1"/><v:tabList/>T<tspan
+						dy="-0.279em" class="st3" v:baseFontSize="12">1</tspan></text>		</g>
+		<g id="shape51-7" v:mID="51" v:groupContext="shape" transform="translate(28.3465,-7.08661)">
+			<title>Hoja.51</title>
+			<desc>T2</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="113.386" cy="131.102" width="226.78" height="21.2598"/>
+			<rect x="0" y="120.472" width="226.772" height="21.2598" class="st4"/>
+			<text x="107.75" y="134.7" class="st2" v:langID="11274"><v:paragraph v:horizAlign="1"/><v:tabList/>T<tspan
+						dy="-0.279em" class="st3" v:baseFontSize="12">2</tspan></text>		</g>
+		<g id="shape52-13" v:mID="52" v:groupContext="shape" transform="translate(283.465,-113.386)">
+			<title>Hoja.52</title>
+			<desc>T1</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="113.386" cy="131.102" width="226.78" height="21.2598"/>
+			<rect x="0" y="120.472" width="226.772" height="21.2598" class="st1"/>
+			<text x="107.75" y="134.7" class="st2" v:langID="11274"><v:paragraph v:horizAlign="1"/><v:tabList/>T<tspan
+						dy="-0.279em" class="st3" v:baseFontSize="12">1</tspan></text>		</g>
+		<g id="shape54-18" v:mID="54" v:groupContext="shape" transform="translate(283.465,-7.08661)">
+			<title>Hoja.54</title>
+			<desc>T2</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="113.386" cy="131.102" width="226.78" height="21.2598"/>
+			<rect x="0" y="120.472" width="226.772" height="21.2598" class="st4"/>
+			<text x="107.75" y="134.7" class="st2" v:langID="11274"><v:paragraph v:horizAlign="1"/><v:tabList/>T<tspan
+						dy="-0.279em" class="st3" v:baseFontSize="12">2</tspan></text>		</g>
+		<g id="shape59-23" v:mID="59" v:groupContext="shape" transform="translate(35.4331,-53.1496)">
+			<title>Hoja.59</title>
+			<ellipse cx="17.7165" cy="124.016" rx="17.7165" ry="17.7165" class="st5"/>
+		</g>
+		<g id="shape65-25" v:mID="65" v:groupContext="shape" transform="translate(198.425,-53.1496)">
+			<title>Hoja.65</title>
+			<ellipse cx="17.7165" cy="124.016" rx="17.7165" ry="17.7165" class="st6"/>
+		</g>
+		<g id="shape68-29" v:mID="68" v:groupContext="shape" transform="translate(297.638,-53.1496)">
+			<title>Hoja.68</title>
+			<ellipse cx="17.7165" cy="124.016" rx="17.7165" ry="17.7165" class="st6"/>
+		</g>
+		<g id="shape71-32" v:mID="71" v:groupContext="shape" transform="translate(439.37,-53.1496)">
+			<title>Hoja.71</title>
+			<ellipse cx="17.7165" cy="124.016" rx="17.7165" ry="17.7165" class="st5"/>
+		</g>
+		<g id="shape72-34" v:mID="72" v:groupContext="shape" v:layerMember="0" transform="translate(46.063,-113.386)">
+			<title>Conector dinámico</title>
+			<desc>Q1</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="7.08661" cy="154.134" width="40" height="17.6036"/>
+			<path d="M7.09 141.73 L7.09 160.81" class="st7"/>
+			<rect v:rectContext="textBkgnd" x="3.07776" y="149.334" width="8.01782" height="10.0165" class="st9"/>
+			<text x="3.08" y="156.53" class="st10" v:langID="11274"><v:paragraph v:horizAlign="1"/><v:tabList/>Q<tspan
+						dy="-0.284em" class="st11" v:baseFontSize="8">1</tspan></text>		</g>
+		<g id="shape73-44" v:mID="73" v:groupContext="shape" v:layerMember="0" transform="translate(70.8661,-63.7795)">
+			<title>Conector dinámico.73</title>
+			<desc>W</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="63.7795" cy="134.646" width="40" height="17.6036"/>
+			<path d="M0 134.65 L121.84 134.65" class="st7"/>
+			<rect v:rectContext="textBkgnd" x="60.1525" y="129.846" width="7.254" height="9.59985" class="st9"/>
+			<text x="60.15" y="137.05" class="st12" v:langID="11274"><v:paragraph v:horizAlign="1"/><v:tabList/>W</text>		</g>
+		<g id="shape74-51" v:mID="74" v:groupContext="shape" v:layerMember="0" transform="translate(209.498,-88.5771)">
+			<title>Conector dinámico.74</title>
+			<desc>Q2</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="7.08661" cy="129.328" width="40" height="17.6036"/>
+			<path d="M7.09 141.73 L7.09 122.65" class="st7"/>
+			<rect v:rectContext="textBkgnd" x="3.07776" y="124.528" width="8.01782" height="10.0165" class="st9"/>
+			<text x="3.08" y="131.73" class="st10" v:langID="11274"><v:paragraph v:horizAlign="1"/><v:tabList/>Q<tspan
+						dy="-0.284em" class="st11" v:baseFontSize="8">2</tspan></text>		</g>
+		<g id="shape75-59" v:mID="75" v:groupContext="shape" v:layerMember="0" transform="translate(209.941,-28.3465)">
+			<title>Conector dinámico.75</title>
+			<desc>Q2</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="7.08661" cy="129.32" width="40" height="17.6036"/>
+			<path d="M7.09 141.73 L7.09 122.63" class="st7"/>
+			<rect v:rectContext="textBkgnd" x="3.07776" y="124.52" width="8.01782" height="10.0165" class="st9"/>
+			<text x="3.08" y="131.72" class="st10" v:langID="11274"><v:paragraph v:horizAlign="1"/><v:tabList/>Q<tspan
+						dy="-0.284em" class="st11" v:baseFontSize="8">2</tspan></text>		</g>
+		<g id="shape76-67" v:mID="76" v:groupContext="shape" v:layerMember="0" transform="translate(308.268,-28.3465)">
+			<title>Conector dinámico.76</title>
+			<desc>Q2</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="6.37794" cy="131.765" width="40" height="17.6036"/>
+			<path d="M7.09 141.73 L7.09 122.65" class="st7"/>
+			<rect v:rectContext="textBkgnd" x="2.36909" y="126.966" width="8.01782" height="10.0165" class="st9"/>
+			<text x="2.37" y="134.17" class="st10" v:langID="11274"><v:paragraph v:horizAlign="1"/><v:tabList/>Q<tspan
+						dy="-0.284em" class="st11" v:baseFontSize="8">2</tspan></text>		</g>
+		<g id="shape77-75" v:mID="77" v:groupContext="shape" v:layerMember="0" transform="translate(308.268,-88.5827)">
+			<title>Conector dinámico.77</title>
+			<desc>Q2</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="6.37794" cy="132.474" width="40" height="17.6036"/>
+			<path d="M7.09 141.73 L7.09 122.65" class="st7"/>
+			<rect v:rectContext="textBkgnd" x="2.36909" y="127.674" width="8.01782" height="10.0165" class="st9"/>
+			<text x="2.37" y="134.87" class="st10" v:langID="11274"><v:paragraph v:horizAlign="1"/><v:tabList/>Q<tspan
+						dy="-0.284em" class="st11" v:baseFontSize="8">2</tspan></text>		</g>
+		<g id="shape79-83" v:mID="79" v:groupContext="shape" v:layerMember="0" transform="translate(450,-113.386)">
+			<title>Conector dinámico.79</title>
+			<desc>Q1</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="6.37793" cy="151.608" width="40" height="17.6036"/>
+			<path d="M7.09 141.73 L7.09 160.81" class="st7"/>
+			<rect v:rectContext="textBkgnd" x="2.36908" y="146.808" width="8.01782" height="10.0165" class="st9"/>
+			<text x="2.37" y="154.01" class="st10" v:langID="11274"><v:paragraph v:horizAlign="1"/><v:tabList/>Q<tspan
+						dy="-0.284em" class="st11" v:baseFontSize="8">1</tspan></text>		</g>
+		<g id="shape80-91" v:mID="80" v:groupContext="shape" v:layerMember="0" transform="translate(450,-53.1496)">
+			<title>Conector dinámico.80</title>
+			<desc>Q2</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="6.37793" cy="150.899" width="40" height="17.6036"/>
+			<path d="M7.09 141.73 L7.09 160.81" class="st7"/>
+			<rect v:rectContext="textBkgnd" x="2.36908" y="146.099" width="8.01782" height="10.0165" class="st9"/>
+			<text x="2.37" y="153.3" class="st10" v:langID="11274"><v:paragraph v:horizAlign="1"/><v:tabList/>Q<tspan dy="-0.284em"
+						class="st11" v:baseFontSize="8">2</tspan></text>		</g>
+		<g id="shape81-99" v:mID="81" v:groupContext="shape" v:layerMember="0" transform="translate(474.803,-63.7795)">
+			<title>Conector dinámico.81</title>
+			<desc>W</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="23.3858" cy="134.646" width="40" height="17.6036"/>
+			<path d="M0 134.65 L41.05 134.65" class="st7"/>
+			<rect v:rectContext="textBkgnd" x="19.7587" y="129.846" width="7.254" height="9.59985" class="st9"/>
+			<text x="19.76" y="137.05" class="st12" v:langID="11274"><v:paragraph v:horizAlign="1"/><v:tabList/>W</text>		</g>
+	</g>
+</svg>
