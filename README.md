@@ -1,5 +1,7 @@
-# Apuntes hechos en LaTeX
+# Obser Hub ⛈️⛰️🪐
 ---
-* Estadística (in progress)
-* ~~Termodinámica de la Atmósfera (80%)~~
-* ~~Física General II (95%)~~
+Espacio para compartir conocimiento, código, apuntes, etc.
+---
+
+Hecho por [Lorenzo Girotti](mailto:lorenzogirotti00@gmail.com)
+
