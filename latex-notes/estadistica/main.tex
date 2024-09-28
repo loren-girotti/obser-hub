@@ -66,7 +66,7 @@
 	\vfill
 	{\Large 2024 \par}
 \end{titlepage}
-
+\sffamily
 \chapter{Probabilidad}
 \section{Definiciones}
 Antes que nada, vamos a definir conceptos que utilizaremos a lo largo del resumen.
@@ -207,7 +207,7 @@ Gráficamente podemos decir que hay una \emph{igualdad de áreas}.
 \section{Multivariables}
 Todo el análisis que se realiza para una variable aleatoria, puede extenderse a una idea multivariable.
 
-\subsection{Función de distribución}
+\subsection{Dos variables}
 Siendo dos variables continuas, tenemos:
 \subsubsection*{Función de densidad de probabilidad conjunta}
 \begin{equation}
@@ -248,6 +248,95 @@ La función de densidad de probabilidad de Y si X:
 \begin{equation}
   \label{eq:densidad-condicional}
   f(y|x)=\frac{f(x,y)}{g(x)}
+\end{equation}
+
+\subsubsection*{Parámetros}
+\begin{itemize}
+  \item \textbf{Valor esperado:} $$E\left[H(\mathrm{x,y})\right]=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}H(x,y)f(x,y)dxdy$$
+  \item \textbf{Varianza conjunta:} $$\sigma^2\left[H(\mathrm{x,y})\right]=E\left[\left(H(\mathrm{x,y})-E\left[H(\mathrm{x,y})\right]\right)^2\right]$$
+  \item \textbf{Medias y varianzas para $\mathrm{x}$ (ídem para $\mathrm{y}$):} \begin{gather*}
+      E\left[\mathrm{x}\right]=\int_{-\infty}^{\infty}xg(x)dx=\mu_{\mathrm{x}}\\ 
+      \sigma^2_{\mathrm{x}}=E\left[(\mathrm{x}-\mu_{\mathrm{x}})^2\right]=\int_{-\infty}^{\infty}(x-\mu_\mathrm{x})^2g(x)dx
+    \end{gather*}
+  \item \textbf{Covarianza:} \begin{align}
+      \label{eq:covarianza}
+      \mathrm{cov(x,y)}&=E\left[(\mathrm{x}-\mu_\mathrm{x})(\mathrm{y}-\mu_\mathrm{y})\right]=\notag \\
+      &=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}(x-\mu_\mathrm{x})(y-\mu_\mathrm{y})f(x,y)dxdy
+    \end{align}
+  \item \textbf{Coeficiente de correlación:} \begin{equation}
+    \label{eq:correlacion}
+    \rho(\mathrm{x,y})=\frac{\mathrm{cov(x,y)}}{\sigma(\mathrm{x})\sigma(\mathrm{y})}
+  \end{equation}
+\end{itemize}
+
+\par Como vemos, se hace una extensión de los parámetros que ya conocíamos; con la diferencia de que ahora la dependencia estadística entre las variables se vuelve de gran interés. La \emph{covarianza} \refeq{eq:covarianza} es un parámetro ideal que permite analizar la dependencia estadística en conjunto con la \emph{correlación} \refeq{eq:correlacion}. Algunas de las características más importantes de la correlación son las siguientes:
+
+\begin{enumerate}
+  \item $-1\leq\rho(\mathrm{x,y})\leq1$
+  \item Si $\mathrm{x}$ e $\mathrm{y}$ son variables estadísticamente independientes, entonces $\rho(\mathrm{x,y})=0$
+  \item Si $\mathrm{y}$ es una función determinsta de $\mathrm{x}$, $\mathrm{y}=H(\mathrm{x})$, entonces $\rho(\mathrm{x,y})=\pm1$
+\end{enumerate}
+
+\subsection{Transformación de variables con dos variables}
+Sean las variables $u$ y $v$ funciones deterministas de las variables aleatorias $\mathrm{x}$ e $\mathrm{y}$, de forma que $u=u(\mathrm{x,y})$ y $v=(\mathrm{x,y})$. Para realizar la transformación, seguimos el mismo criterio de \emph{igualdad de áreas} solo que ahora tenemos una dependencia de dos variables. Por lo tanto, de ahora en adelante tendremos que utilizar el \emph{Jacobiano}.
+\par Conociendo $f(x,y)$ determinamos $g(u,v)$ a través de: \begin{equation}
+  \label{eq:trans-dos-variables}
+  g(u,v)=f(x(u,v),y(u,v))\left|J\left(\frac{x,y}{u,v}\right)\right|
+\end{equation}
+
+\subsection{Caso de n variables}
+Definimos un vector de varaibles aleatorias $\vec{\mathrm{x}}=(\mathrm{x}_1,\dots,\mathrm{x}_{n})=(\mathrm{x}_1\,\cdots\,\mathrm{x}_{n})^{T}$ y entonces quedan:
+
+\subsubsection*{Función de distribución conjunta:}
+\begin{equation*}
+  F(x_1,\dots,x_n)=P(\mathrm{x}_1<x_1,\dots,\mathrm{x}_{n}<x_n)
+\end{equation*}
+\subsubsection*{Función de densidad de probabilidad:}
+\begin{equation*}
+  f(x_1,\dots,x_n)=\frac{\partial^n}{\partial x_1\cdots\partial x_{n}}F(x_1,\dots,x_{n})
+\end{equation*}
+\subsubsection*{Función de densidad de probabilidad marginal:}
+\begin{equation*}
+  g_{r}(x_{r})=\int_{-\infty}^{\infty}\cdots \int_{-\infty}^{\infty}f(x_1,\dots,x_n)dx_{1}\cdots dx_{r-1}dx_{r+1}\cdots dx_{n}
+\end{equation*}
+\subsubsection*{Operador Esperanza:}
+\begin{equation*}
+  E\left[H(\vec{\mathrm{x}})\right]=\int_{-\infty}^{\infty}\cdots \int_{-\infty}^{\infty}f(x_1,\dots,x_{n})dx_{1}\cdots dx_{n}
+\end{equation*}
+\subsubsection*{Media de una variable en particular:}
+\begin{gather*}
+  E\left[\mathrm{x}_r\right]=\int_{-\infty}^{\infty}\cdots \int_{-\infty}^{\infty}x_{r}f(x_1,\dots,x_{n})dx_{1}\cdots dx_{n}\\
+  E\left[\mathrm{x}_r\right]=\int_{-\infty}^{\infty}x_{r}g_{r}(x_{r})dx_{r}
+\end{gather*}
+
+\subsubsection*{Independencia de variables:}
+Si las variables son independientes, tenemos
+\begin{equation*}
+  f(x_{1},\dots,x_{n})=g_{1}(x_{1})\cdots g_{n}(x_{n})
+\end{equation*}
+
+\subsection{Vector de media, varianza y covarianza}
+Si coleccionamos todas las medias de las variables $(\mu_{\mathrm{x}_r})$ obtenemos un vector de medias dado por:
+\begin{equation}
+  \label{media-vec}
+  \vec{\mu}_{\vec{\mathrm{x}}}=(\mu_{\mathrm{x}_1},\dots,\mu_{\mathrm{x}_n})=(E\left[\mathrm{x}_1\right]\,\cdots\,E\left[\mathrm{x}_n\right])^T
+\end{equation}
+
+\par Si aplicamos lo mismo para intentar calcular la varianza; obtenemos la \emph{matriz de varianza-covarianza}
+
+\begin{equation*}
+  E\left[(\vec{\mathrm{x}}-\vec{\mu}_{\vec{\mathrm{x}}})(\vec{\mathrm{x}}-\vec{\mu}_{\vec{\mathrm{x}}})^T\right]=\begin{bmatrix} E\left[(\mathrm{x_1}-\mu_1)^2\right] & \cdots & E\left[(\mathrm{x_1}-\mu_1)(\mathrm{x}_{n}-\mu_{n})\right]\\
+    \vdots & \ddots & \vdots \\
+  E\left[(\mathrm{x}_{n}-\mu_{n})(\mathrm{x_{1}}-\mu_{1})\right] & \cdots & E\left[(\mathrm{x}_{n}-\mu_{n})^2\right] \end{bmatrix}
+\end{equation*}
+
+que utilizando las definiciones de varianza y covariazna queda
+
+\begin{equation}
+  \label{eq:matriz-var-cov}
+  E\left[(\vec{\mathrm{x}}-\vec{\mu}_{\vec{\mathrm{x}}})(\vec{\mathrm{x}}-\vec{\mu}_{\vec{\mathrm{x}}})^T\right]=\begin{bmatrix} \sigma^{2}_{\mathrm{x}_1} & \cdots & \mathrm{cov(x_{1},x_{n})} \\
+    \vdots & \ddots & \vdots \\
+    \mathrm{cov(x_{n},x_{1})} & \cdots & \sigma^{2}_{\mathrm{x}_n} \end{bmatrix}
 \end{equation}
 
 \end{document}
