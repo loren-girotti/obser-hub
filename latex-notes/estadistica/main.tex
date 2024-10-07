@@ -339,6 +339,87 @@ que utilizando las definiciones de varianza y covariazna queda
     \mathrm{cov(x_{n},x_{1})} & \cdots & \sigma^{2}_{\mathrm{x}_n} \end{bmatrix}
 \end{equation}
 
+\section{Transformación de n variables}
+Siendo $\vec{\mathrm{x}}=(\mathrm{x_1},\dots,\mathrm{x}_{n})$ y le aplicamos una función determinista $\vec{\mathrm{y}}$ de modo tal que,
+\begin{align*}
+  \mathrm{y}_1&=\mathrm{y}_1(\vec{\mathrm{x}})\\
+  &\,\,\,\vdots\\ 
+  \mathrm{y}_{m}&=\mathrm{y}_{m}(\vec{\mathrm{x}})
+\end{align*}
+
+\par Notar que $\vec{\mathrm{y}}:\mathbb{R}^{n}\rightarrow\mathbb{R}^{m}$.
+\par Entonces, la función de densidad de probabilidad de la nueva variable $\vec{\mathrm{y}}$ queda
+\begin{equation}
+  g(\vec{y})=\left|J \left(\frac{\vec{x}}{\vec{y}}\right)\right|f(\vec{x}(\vec{y}))
+  \label{eq:transfor-nvar}
+\end{equation}
+donde 
+
+\begin{equation*}
+  \left|J \left(\frac{\vec{x}}{\vec{y}}\right)\right|=\left|\begin{matrix} \frac{\partial x_1}{\partial y_1} & \cdots & \frac{\partial x_{n}}{\partial y_1} \\
+  \vdots & \ddots & \vdots \\ 
+  \frac{\partial x_{1}}{\partial y_{m}} & \cdots & \frac{\partial x_{n}}{\partial y_{m}} \end{matrix}\right|
+\end{equation*}
+
+\subsection{Transformación lineal y ortogonal}
+
+\subsubsection{Regla de propagación de errores}
+Considerando $m$ funciones lineales de $n$ variables $\vec{\mathrm{x}}: \mathbb{R}^{n\times1}$ con media y matriz de varianza-covarianza conocidas:
+\begin{align*}
+  \mathrm{y}_1&=a_{1}+t_{11}\mathrm{x}_{1}+\cdots+t_{1n}\mathrm{x}_{n}\\
+  &\,\,\,\,\vdots\\
+  \mathrm{y}_m&=a_{m}+t_{m1}\mathrm{x}_{1}+\cdots+t_{mn}\mathrm{x}_{n}\\
+\end{align*}
+
+en forma matricial o vectorial:
+\begin{equation*}
+  \vec{\mathrm{y}}=T\vec{\mathrm{x}}+\vec{a}
+\end{equation*}
+
+la \emph{Ley de Propagación de Errores} establece:
+\begin{equation}
+  \label{eq:prop-errores}
+  C_{\mathrm{y}}=TC_{\mathrm{x}}T^{T}
+\end{equation}
+
+\subsubsection{Matriz T para un caso no de transformación no lineal}
+En el caso de que la transformación no sea lineal, podemos \emph{linealizarla} a través de un desarrollo de Taylor a primer orden, centrado en la media de $\mathrm{x}$
+
+\begin{equation*}
+  \mathrm{y}_{i}=y_{i}(\vec{\mu})+\left(\frac{\partial y_{i}}{\partial x_{1}}\right)(\mathrm{x}_{1}-\mu_{1})+\cdots+\left(\frac{\partial y_{i}}{\partial x_{n}}\right)(\mathrm{x}_{n}-\mu_{n})+T.O.S
+\end{equation*}
+luego, la matriz $T$ será:
+
+\begin{equation*}
+  T=\left(\begin{matrix}\frac{\partial y_{1}}{\partial x_{1}} & \cdots & \frac{\partial y_{1}}{\partial x_{n}}\\
+    \vdots & \ddots & \vdots\\
+    \frac{\partial y_{m}}{\partial x_{1}} & \cdots & \frac{\partial y_{m}}{\partial x_{n}}\end{matrix}\right)
+\end{equation*}
+
+\par \textbf{Todas las derivadas son evaluadas en $\vec{\mu}$}
+
+\chapter{Funciones de distribución especiales}
+\section{Distribución Binomial}
+Esta función de distribución se puede asignar a experimentos aleatorios que tengan las siguientes características:
+\begin{enumerate}
+  \item Sólo dos resultados posibles mutuamente excluyentes: $A$ o $\lnot A$
+  \item Independencia de resultados en cada prueba.
+  \item $P(A)=p=\mathrm{cte}$.
+  \item Existe un número finito, $n$, de pruebas.
+\end{enumerate}
+
+La variable aleatoria binomial cuenta la cantidad de \emph{éxitos} en un total de $n$ pruebas.
+\begin{equation*}
+  \mathrm{x}=\sum_{i=1}^{n}\mathrm{x}_{i}
+\end{equation*}
+con 
+\begin{equation*}
+  \mathrm{x}_i = \begin{cases}
+    1, & \text{si sucede}~ A\\
+    0, & \text{si no sucede}~ A
+  \end{cases}
+\end{equation*}
+
+
+
 \end{document}
-
-
