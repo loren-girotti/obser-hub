@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1728331170.67863 "/home/loren/obser-hub/latex-notes/estadistica/main.tex" "main.pdf" "main" 1728331172.22747 0
-  "/home/loren/obser-hub/latex-notes/estadistica/main.tex" 1728331169.9999 18580 53866641a3aa0db4835a8e7613f20b37 ""
+["pdflatex"] 1728349639.49095 "/home/loren/obser-hub/latex-notes/estadistica/main.tex" "main.pdf" "main" 1728349640.61107 0
+  "/home/loren/obser-hub/latex-notes/estadistica/main.tex" 1728349639.19545 21167 cdc42f8a7d8677eff46d7762ddba96af ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -108,9 +108,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1721319325 5483424 3a26e88fdc3d1845386b5f37bdbd5d64 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1721319486 8239385 75713b26f917b92f7fcdc014369963bd ""
   "/usr/local/texlive/2024/texmf.cnf" 1721319316.8872 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "main.aux" 1728331172.01991 5325 739e3165ad79931c53d44e3d18afa910 "pdflatex"
-  "main.out" 1728331172.02658 3878 5900f40e97e6bf80a775c642837f525d "pdflatex"
-  "main.tex" 1728331169.9999 18580 53866641a3aa0db4835a8e7613f20b37 ""
+  "main.aux" 1728349640.48878 6198 ec93750d399625a9a92e2db3dd4e3d29 "pdflatex"
+  "main.out" 1728349640.48878 4725 3c4b3cf2c6ce4bda50d22867e7631b97 "pdflatex"
+  "main.tex" 1728349639.19545 21167 cdc42f8a7d8677eff46d7762ddba96af ""
   (generated)
   "main.aux"
   "main.log"

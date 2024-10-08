@@ -418,8 +418,74 @@ con
     1, & \text{si sucede}~ A\\
     0, & \text{si no sucede}~ A
   \end{cases}
+\end{equation*}.
+
+\begin{equation}
+  \label{eq:prob-binomial}
+  P(k)=W^{n}_{k}=\binom{n}{k}p^{k}q^{n-k}
+\end{equation}
+
+\subsection{Parámetros de la binomial}
+\begin{itemize}
+  \item \emph{Media:}$$E\left[\mathrm{x}_i\right]=np$$
+  \item \emph{Varianza:}$$\sigma^2(\mathrm{x}_{i})=npq$$
+\end{itemize}
+
+\section{Multinomial}
+Dada una serie de eventos mutuamente excluyentes que terminan definiendo todo el espacio muestral: $E=A_1+\cdots+A_{l}$; donde
+\begin{equation*}
+  P(A_{j})=p_{j},\quad \sum_{j=1}^{l}p_{j}=1
+\end{equation*}.
+
+La variable multinomial se expresa:
+\begin{equation*}
+  \mathrm{x}_{j}=\sum_{i=1}^{n}\mathrm{x}_{ij}
 \end{equation*}
 
+\begin{equation*}
+  \mathrm{x}_{ij} = \begin{cases}
+    1, & \text{si sucede}~ A_{j}\\
+    0, & \text{en el resto.}
+  \end{cases}
+\end{equation*}
+
+\par De esta manera, la probabilidad queda:
+\begin{equation}
+  \label{eq:prob-multinomial}
+  P(\mathrm{x}_1=k_1,\dots,\mathrm{x}_l=k_{l})=\frac{n!}{\prod_{j=1}^{l}k_{j}!}\prod_{j=1}^{l}p^{k_{j}}_{j},
+\end{equation}
+tener en cuenta que $$\sum_{j=1}^{l}k_{j}=n$$
+
+\subsection{Parámetros de la multinomial}
+\begin{itemize}
+  \item \emph{Media:}$$E\left[\vec{\mathrm{x}}\right]=n\vec{p},\quad\vec{p}=\begin{bmatrix}p_{1}\\
+  \vdots\\
+  p_{l}\end{bmatrix}$$
+  \item \emph{Varianza:}$$\sigma^{2}(\mathrm{x}_{j})=np_{j}(1-p_{j}),\quad j=1,\dots,l$$
+  \item \emph{Covarianza:}$$cov(\mathrm{x}_{i},\mathrm{x}_{j})=-np_{i}p_{j},\quad i\neq j$$
+\end{itemize}
+
+\section{Poissoniana}
+Partiendo de una binomial, con las siguientes condiciones: $n\rightarrow\infty$, $p\rightarrow0$ y $np=\lambda$; tenemos
+
+\begin{align*}
+  P(k)&=\binom{n}{k}p^{k}q^ {n-k}\\
+      &=\frac{n!}{k!(n-k)!}\left(\frac{\lambda}{n}\right)^ {k}\frac{\left(1-\frac{\lambda}{n}\right)^{n}}{\left(1-\frac{\lambda}{n}\right)^{k}}\\
+      &=\frac{\lambda^{k}}{k!}\frac{n(n-1)(n-2)\cdots(n-k+1)}{n^{k}})\frac{\left(1-\frac{\lambda}{n}\right)^{n}}{\left(1-\frac{\lambda}{n}\right)^{k}}\\
+      &=\frac{\lambda^{k}}{k!}\left(1-\frac{\lambda}{n}\right)^{n}\frac{\left(1-\frac{1}{n}\right)\cdots\left(1-\frac{k-1}{n}\right)}{\left(1-\frac{\lambda}{n}\right)^{k}},
+\end{align*}
+tomando $\lim_{n\rightarrow\infty}$ queda:
+\begin{equation}
+  \label{eq:prob-poissoniana}
+  P(k)=\frac{\lambda^{k}}{k!}e^{-\lambda}
+\end{equation}
+
+\subsection{Parámetros de la poissoniana}
+\begin{itemize}
+  \item \emph{Media:}$$E\left[k\right]=\lambda$$,
+  \item \emph{Varianza:}$$\sigma^{2}=\lambda$$.
+\end{itemize}
+\par \emph{Nota: Para la demostración utilizar la definición de media para variables discretas, teniendo en cuenta que la poissoniana va de 0 a $\infty$.}
 
 
 \end{document}
