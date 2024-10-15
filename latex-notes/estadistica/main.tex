@@ -487,5 +487,43 @@ tomando $\lim_{n\rightarrow\infty}$ queda:
 \end{itemize}
 \par \emph{Nota: Para la demostración utilizar la definición de media para variables discretas, teniendo en cuenta que la poissoniana va de 0 a $\infty$.}
 
+\section{Gaussiana}
+Es la llamada \emph{distribución normal}, su función de densidad de probabilidad está dada por:
+
+\begin{equation*}
+  f(x)=\phi(x)=\frac{1}{\sqrt{2\pi}b}\exp{\left(-\frac{(x-a)^2}{2b^2}\right)},\quad -\infty<x<\infty
+\end{equation*}
+
+\subsection{Parámetros de la gaussiana}
+\begin{equation*}
+  \mu=a,\qquad \sigma^2=b^2
+\end{equation*}
+
+\par \emph{Nota: para la demostración proponer cambio de variable $\mathrm{z}=(\mathrm{x}-\mu)/\sigma$} y tener en cuenta que la integral definida $\int_{-\infty}^{\infty}\exp{(-z^2/2)}dz=\sqrt{2\pi}$
+
+\par De esta manera, la función de densidad de probabilidad queda:
+\begin{equation}
+  f(x)=\phi(x)=\frac{1}{\sqrt{2\pi}\sigma}\exp{\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)},\quad -\infty<x<\infty
+  \label{eq:fdp-gaussiana}
+\end{equation}
+
+\subsection{Normalización de la gaussiana}
+Si utilizamos la variable normalizada $\mathrm{x}'=(\mathrm{x}-\mu)/\sigma$
+\begin{equation}
+  \label{eq:fdp-gaussiana-normalizada}
+  \varphi(x')=\frac{1}{\sqrt{2\pi}}\exp{\left(-\frac{x'\,^2}{2}\right)}
+\end{equation}
+
+Lo importante de normalizar la gaussiana es poder encontrar valores de manera rápida, ya que se encuentran tabulados.
+
+\subsection{Criterio de los 3 sigmas}
+Utilizando al desigualdad de Chebychev \eqref{eq:Chebychev} con la gaussiana estandarizada, podemos notar lo siguiente:
+\begin{gather*}
+  P(|\mathrm{x}-\mu|\leq\sigma)=68.3\%,\\
+  P(|\mathrm{x}-\mu|\leq2\sigma)=95.4\%,\\
+  P(|\mathrm{x}-\mu|\leq3\sigma)=99.8\%.
+\end{gather*}
+\par De manera tal que cualquier valor aleatorio (que siga una distribución gaussiana) que se encuentre con un desvío superior a $3\sigma$ es altamente improbable. Lo cual es un buen indicador para descartar \emph{outlayers} o para encontrarlos y estudiar si son desechables o no.
+
 
 \end{document}
