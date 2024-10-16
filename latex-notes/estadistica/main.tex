@@ -569,5 +569,38 @@ Para generar los valores aleatorios que alimentan mi simulación de Montecarlo, 
   \item No deben ocupar mucha memoria en la computadora.
 \end{enumerate}
 
+\par Un algoritmo muy utilizado que cumple las condiciones es el \emph{Generador Multiplicativo Congruencial Lineal} que sigue la siguiente recursión:
+\begin{equation}
+  \label{eq:LCG}
+  x_{i}=(ax_{i-1}+c)\mod{m}\,.
+\end{equation}
+
+Como se van a utilizar números enteros de $k$ bits, se plantea:
+\begin{equation}
+  \label{eq:LCG-bin}
+  x_{i}=(ax_{i-1}+c)\mod{2^{k}}\,.
+\end{equation}
+
+Para inicializar el generador, necesitamos determinar un valor inicial $x_0$. A partir de allí elegimos los parámetros $a$, $c$ y $k$ para producir los números que sean necesarios.
+
+\subsection{Ejemplo}
+\textrm{\large{Números aleatorios distribuidos exponencialmente.}}
+\vspace{2mm}
+\par Nos gustaría generar números aleatorios dados por la siguiente densidad de probabilidad
+\begin{equation*}
+  g(t)=\begin{cases}
+    \frac{1}{\tau}e^{-t/\tau},\quad &t\geq0,\\
+    0, \quad &t<0. 
+  \end{cases}
+\end{equation*}
+\par Esta densidad de probabilidad describe el tiempo $t$ de decaimiento de un núcleo radioactivo que existe en un tiempo $t=0$ y tiene una vida media $\tau$. La función de distribución es
+\begin{equation*}
+  x=G(t)=\frac{1}{\tau}\int_{t'=0}^{t}g(t')dt'=1-e^{-t/\tau}\,.
+\end{equation*}
+\par Siguiendo las ideas del método, invertimos $G$ y obtenemos:
+\begin{equation*}
+  t=-\tau\ln{(1-x)},
+\end{equation*}
+la variable simulada $t$ por la variable $x$ generada por métodos numéricos. Por ejemplo con \refeq{eq:LCG-bin}.
 
 \end{document}
