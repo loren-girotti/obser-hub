@@ -525,5 +525,49 @@ Utilizando al desigualdad de Chebychev \eqref{eq:Chebychev} con la gaussiana est
 \end{gather*}
 \par De manera tal que cualquier valor aleatorio (que siga una distribución gaussiana) que se encuentre con un desvío superior a $3\sigma$ es altamente improbable. Lo cual es un buen indicador para descartar \emph{outlayers} o para encontrarlos y estudiar si son desechables o no.
 
+\section{Método de Montecarlo}
+Es un método que se basa en la generación de números \emph{pseudoaleatorios} con la intención de realizar simulaciones y realizar experimentos computacionales.
+
+\par Para generar valores pseudoaleatorios, utilizamos una variable aleatoria $\mathrm{x}$ tal que:
+\begin{equation*}
+  f(x)=\begin{cases}
+    1,\quad\text{Si }~0\leq x< 1;\\
+    0,\quad\text{Si }~x<0\,\,\text{y}~x\geq1.
+  \end{cases}
+\end{equation*}
+y tomando $\mathrm{y}$ como una variable aleatoria cuya función de densidad de probabilidad es $g(y)$ conocida.
+\par La transformación de variables queda
+\begin{equation*}
+  g(y)dy=dx
+\end{equation*}
+
+\par A través de la relación de la función de distribución $G(y)$ con la función de densidad de probabilidad $g(y)$: $dG(y)/dy=g(y)$
+\begin{equation*}
+  dx=g(y)dy=dG(y),
+\end{equation*}
+lo cual, integrando queda
+\begin{equation*}
+  x=G(y)=\int_{-\infty}^{y}g(t)dt\,.
+\end{equation*}
+\par Si invertimos la variable, obtenemos:
+\begin{equation}
+  \label{eq:montecarlo-variable}
+  \mathrm{y}=G^{-1}(\mathrm{x})
+\end{equation}
+lo cual implica que si se toma un número aleatorio $\mathrm{x}$ con distribución uniforme entre $0$ y $1$, obtenemos a través de $G^{-1}$ un número aleatorio $\mathrm{y}$ con función de densidad de probabilidad $g(y)$.
+
+\subsection{Método de generación de números pseudoaleatorios}
+Para generar los valores aleatorios que alimentan mi simulación de Montecarlo, necesito tener en cuenta lo siguiente:
+
+\begin{enumerate}
+  \item Distribución uniforme.
+  \item Estadísticamente independientes.
+  \item Su media debe ser estadísticamente igual a $0.5$.
+  \item Su varianza debe ser estadísticamente igual a $0.5$.
+  \item Su período\footnote{Como vamos a generarlos a través de recursiones basadas en congruencias, luego de ciertas iteraciones vuelve a dar exactamente los mismos valores} debe ser largo.
+  \item Deben ser generados a través de un método computacionalmente rápido.
+  \item No deben ocupar mucha memoria en la computadora.
+\end{enumerate}
+
 
 \end{document}
