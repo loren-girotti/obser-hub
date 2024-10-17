@@ -603,4 +603,29 @@ Para inicializar el generador, necesitamos determinar un valor inicial $x_0$. A 
 \end{equation*}
 la variable simulada $t$ por la variable $x$ generada por métodos numéricos. Por ejemplo con \refeq{eq:LCG-bin}.
 
+\chapter{Teorema central del Límite}
+\section{Función Característica}
+Definimos a la función característica como
+\begin{equation}
+  \label{eq:func-carac-def}
+  \varphi(t)=E\left[\exp(it\mathrm{x})\right]
+\end{equation}
+
+Según la naturaleza de la variable:
+\begin{equation}
+  \label{eq:func-carac}
+  \varphi(t)=\begin{cases}
+    \displaystyle\int_{-\infty}^{\infty}\exp{(itx)}f(x)dx,\quad &\mathrm{x}\,\text{continua},\\
+    \\
+    \displaystyle\sum_{i}\exp{(itx_{i})}P(\mathrm{x}=x_{i}),\quad &\mathrm{x}\,\text{discreta}.
+  \end{cases}
+\end{equation}
+
+\par Los modos de la función característica vienen dados por:
+
+\begin{equation}
+  \label{eq:modos-func-caract}
+  \varphi^{(n)}(t)=\frac{d^{n}\varphi(t)}{dt^{n}}=i^{n}\int_{-\infty}^{\infty}x^{n}\exp{(itx)}f(x)dx
+\end{equation}
+
 \end{document}
