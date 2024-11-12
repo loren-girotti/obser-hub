@@ -24,5 +24,8 @@ C array de M números complejos.
                       indice=i
               end if
       end do 
+        
+      write(*,*) "El complejo de mayor módulo es el de índice ",indice
+      write(*,*) "con un módulo de ",max
 
              end
