@@ -14,12 +14,11 @@ C PROGRAMA PARA HACER UNA FUNCION PARA CALCULAR n!
       end
 
       integer function fact(n)
-      integer n, i, facto
-      facto=1
+      integer n, i 
+      fact=1
       do i = 1, n
-            facto=i*facto
+            fact=i*fact
       enddo
-      fact = facto
       return
       end
 
