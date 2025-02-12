@@ -34,5 +34,9 @@ C N numeros complejos.
             do i=1,n
               if (abs(C(i)).lt.maxmin) then
                 maxmin=abs(C(i))
-              end if
+                      end if
             end do 
+      end
+
+
+
