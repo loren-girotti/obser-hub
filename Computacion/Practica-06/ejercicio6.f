@@ -3,33 +3,46 @@ C N numeros complejos.
       program max_min_complex
       implicit none
       integer n,i
-      real mod
-      complex C(100)
+      real mod_maxmin, a, b
+      complex C(100), maxmin, z
       character*3 string
+
       write(*,*)'Ingrese la dim del vector de complejos'
       read(*,*) n
       write(*,*)'Ingrese el vector complejo, de a componentes'
-      do i=1,n
-      read(*,*) C(i)
-      write(*,*)'Componente',i,'=',C(i)
-      enddo
+        do i=1,n
+             read(*,*)a,b 
+             C(i)=complex(a,b)
+             write(*,*)'Componente',i,'=',C(i)
+        enddo
+      
+      write(*,*)'Escriba max para el maximo'
+      write(*,*)'Escriba min para el minimo'
+      read(*,*)string   
 
+      z=maxmin(C,n,string)
+      mod_maxmin=abs(z)
 
+      write(*,*)'El ',string,' del vector es ',z 
+      write(*,*)'cuyo modulo es ',mod_maxmin
 
       end
 
-      real function maxmin(C(n),n,str)
+      complex function maxmin(C,n,str)
       integer n,i
-      complex C(n)
+      complex C(100)
+      real mod_maxmin
       character*3 str
       
       if(str.eq.'max') then
-      maxmin=0.0
-            do i=1,n
-              if (abs(C(i)).gt.maxmin) then
-                maxmin=abs(C(i))
-              end if
-            end do 
+      mod_maxmin=0.0
+        do i=1,n
+           if (abs(C(i)).gt.mod_maxmin) then
+              mod_maxmin=abs(C(i))
+              maxmin=C(i)
+           end if
+        end do 
+
       else
             do i=1,n
               if (abs(C(i)).lt.maxmin) then
@@ -40,3 +53,14 @@ C N numeros complejos.
 
 
 
+      mod_maxmin=1e10
+        do i=1,n
+           if (abs(C(i)).lt.mod_maxmin) then
+              mod_maxmin=abs(C(i))
+              maxmin=C(i)
+           end if
+        end do 
+      endif
+
+      RETURN
+      end
