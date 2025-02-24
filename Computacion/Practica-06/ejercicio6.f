@@ -44,6 +44,18 @@ C N numeros complejos.
         end do 
 
       else
+<<<<<<< HEAD
+=======
+            do i=1,n
+              if (abs(C(i)).lt.maxmin) then
+                maxmin=abs(C(i))
+                      end if
+            end do 
+      end
+
+
+
+>>>>>>> a97a4101152f0960ba441fcc13926fe9252680d0
       mod_maxmin=1e10
         do i=1,n
            if (abs(C(i)).lt.mod_maxmin) then
