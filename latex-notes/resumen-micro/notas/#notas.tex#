@@ -1,0 +1,44 @@
+\documentclass[utf-8,11pt,a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+
+\begin{document}
+\section{Fludios viscosos, turbulentos}
+\subsection{Número de Richardson}
+\begin{equation}
+    \mathrm{Ri}=\frac{g}{T_{v}}\frac{\partial \Theta_{v}}{\partial z}\left|\frac{\partial V}{\partial z}\right|^{-2}
+\end{equation}
+\par El nÃºmero de Richardson es una buena medida de la turbulencia y provee un criterio simple para la existencia o no existencia de turbulencia en un entorno estable estratificado.
+\par Un $\mathrm{Ri}>0.25$ indica poco o casi nulo entorno turbulento. Por lo tanto, un perfil vertical de $\mathrm{Ri}$ deja estudiar con mÃ¡s exactitud la turbulencia en la PBL.
+\subsection{Número de Reynolds}
+\begin{equation}
+    \mathrm{Re}=\frac{UL}{\nu}
+\end{equation}
+donde $U$ es la velocidad caracterÃ­stica y $L$ es la longitud de escala.
+
+\section{Definiciones}
+
+\subsection{Viscosidad}
+
+Es una propiedad molecular del fluido que representa la resistencia interna del mismo a la deformación. 
+En un fluido \emph{ideal} o \emph{no viscoso} se asume un flujo no turbulento o laminar, en consecuencia no hay transferencias de momento, calor ni masa debido a la mezcla turbulenta; sino que las propiedades son transportadas a lo largo de las lineas de corriente producto de la advección. Por otro lado, la condición de no viscosidad implica que ante la interacción del fluido con una superficie o con otro fluido con una gran diferencia de densidad, no habrá fricción entre ellos.
+
+\subsection{Fluidos Newtonianos}
+La viscosidad es responsable de la resistencia friccional entre capas adyacentes de fluido; la resistenciapor unidad de área se llama \emph{tensión por cortante} y se asocia al movimiento relativo entre las capas.
+
+Los fluidos newtonianos son aquellos en donde hay una relación proporcional entre la tensión por cortante y el cambio del gradiente vertical de velocidad. Donde el coeficiente de proporcionalidad $\mu$ se llama viscosidad dinámica del fluido. Para flujos se suele utilizar la viscosidad cinemática que es la viscosidad dinámica dividido la densidad, con dimensiones de $L^2 T^{-1}$
+
+\subsection{Flujos viscosos}
+
+En la realidad siempre existe viscosidad en los flujos. Aún así podemos encontrar circunstancias en donde el flujo se vuelva \emph{laminar}.
+
+\subsubsection{Flujo laminar}
+
+Se caracteriza por ser suave, ordenado y de movimiento lento, donde las capas adyasentes de fluidose deslizan entre sí con muy poca transferencia (solo a nivelmolecular) de propiedades a través de ellas. El campo de flujo, la temperatura asociada y los campos de concentración son regulares y predecibles y solo varían gradualmente en tiempo y espacio.
+
+\subsubsection{Flujo turbulento}
+
+Son movimientos altamente irregualres, casi aleatorios, tridimensionales, altamente rotantes, disipativos y muy difusos (mezcla). Todas las propiedades escalares y las del flujo fluctuan tanto en tiempo como en espacio, con un amplio rango temporal y espacial. Por ejemplo: las fluctuaciones de velocidad en la ABL van desde $10^{-3}\mathrm{s}$ a $10^4\mathrm{s}$ y la correspondiente al espacio va desde $10^{-3}\mathrm{m}$ a $10^4\mathrm{m}$ - del orden del millón en rango. Es por esto que es imposible predecir o calcular exactamente a los movimientos turbulentos como funciones del tiempo y el espacio; normalmente se utilizan los promedios estadísticos de las propiedades.
+
+\end{document}
