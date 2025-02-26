@@ -2,27 +2,43 @@
 \usepackage[spanish]{babel}
 \usepackage{amsmath,amssymb}
 \usepackage{hyperref}
+\usepackage{titling}
+
+    
 
 \begin{document}
 
-\section{EnergÌa}
+\begin{titlepage}
+    \centering
+    {\bfseries\LARGE Universidad Nacional de La Plata \par}\vspace{1cm}
+    {\scshape\Large Facultad de Ciencias Astron√≥micas y Geof√≠scias \par}\vspace{3cm}
+    {\scshape\Huge Micrometeorolog√≠a \par}\vspace{3cm}
+    {\itshape\Large Notas te√≥ricas \par}
+    \vfill
+    {\Large Autor: \par}
+    {\Large Lorenzo Girotti \par}
+    \vfill
+    {\Large 2025 \par}
+\end{titlepage}
 
-\subsection{Flujos de energÌa en una superficie ideal}
+\section{Energ√≠a}
 
-Consideramos \emph{superficie ideal} a aquella que es relativamente suave, horizontal, homogÈnea, extensiva y opaca a la radiaciÛn. La energÌa disponible para tal superficie se simplifica de manera tal que solo depende de flujos verticales de energÌa.
+\subsection{Flujos de energ√≠a en una superficie ideal}
 
-\subsubsection{Tipos de flujo de energÌa}
+Consideramos \emph{superficie ideal} a aquella que es relativamente suave, horizontal, homog√©nea, extensiva y opaca a la radiaci√≥n. La energ√≠a disponible para tal superficie se simplifica de manera tal que solo depende de flujos verticales de energ√≠a.
+
+\subsubsection{Tipos de flujo de energ√≠a}
 
 
 
 \section{Fludios viscosos, turbulentos}
-\subsection{N˙mero de Richardson}
+\subsection{N√∫mero de Richardson}
 \begin{equation}
     \mathrm{Ri}=\frac{g}{T_{v}}\frac{\partial \Theta_{v}}{\partial z}\left|\frac{\partial V}{\partial z}\right|^{-2}
 \end{equation}
 \par El n√∫mero de Richardson es una buena medida de la turbulencia y provee un criterio simple para la existencia o no existencia de turbulencia en un entorno estable estratificado.
 \par Un $\mathrm{Ri}>0.25$ indica poco o casi nulo entorno turbulento. Por lo tanto, un perfil vertical de $\mathrm{Ri}$ deja estudiar con m√°s exactitud la turbulencia en la PBL.
-\subsection{N˙mero de Reynolds}
+\subsection{N√∫mero de Reynolds}
 \begin{equation}
     \mathrm{Re}=\frac{UL}{\nu}
 \end{equation}
@@ -32,25 +48,25 @@ donde $U$ es la velocidad caracter√≠stica y $L$ es la longitud de escala.
 
 \subsection{Viscosidad}
 
-Es una propiedad molecular del fluido que representa la resistencia interna del mismo a la deformaciÛn. 
-En un fluido \emph{ideal} o \emph{no viscoso} se asume un flujo no turbulento o laminar, en consecuencia no hay transferencias de momento, calor ni masa debido a la mezcla turbulenta; sino que las propiedades son transportadas a lo largo de las lineas de corriente producto de la advecciÛn. Por otro lado, la condiciÛn de no viscosidad implica que ante la interacciÛn del fluido con una superficie o con otro fluido con una gran diferencia de densidad, no habr· fricciÛn entre ellos.
+Es una propiedad molecular del fluido que representa la resistencia interna del mismo a la deformaci√≥n. 
+En un fluido \emph{ideal} o \emph{no viscoso} se asume un flujo no turbulento o laminar, en consecuencia no hay transferencias de momento, calor ni masa debido a la mezcla turbulenta; sino que las propiedades son transportadas a lo largo de las lineas de corriente producto de la advecci√≥n. Por otro lado, la condici√≥n de no viscosidad implica que ante la interacci√≥n del fluido con una superficie o con otro fluido con una gran diferencia de densidad, no habr√° fricci√≥n entre ellos.
 
 \subsection{Fluidos Newtonianos}
-La viscosidad es responsable de la resistencia friccional entre capas adyacentes de fluido; la resistenciapor unidad de ·rea se llama \emph{tensiÛn por cortante} y se asocia al movimiento relativo entre las capas.
+La viscosidad es responsable de la resistencia friccional entre capas adyacentes de fluido; la resistenciapor unidad de √°rea se llama \emph{tensi√≥n por cortante} y se asocia al movimiento relativo entre las capas.
 
-Los fluidos newtonianos son aquellos en donde hay una relaciÛn proporcional entre la tensiÛn por cortante y el cambio del gradiente vertical de velocidad. Donde el coeficiente de proporcionalidad $\mu$ se llama viscosidad din·mica del fluido. Para flujos se suele utilizar la viscosidad cinem·tica que es la viscosidad din·mica dividido la densidad, con dimensiones de $L^2 T^{-1}$
+Los fluidos newtonianos son aquellos en donde hay una relaci√≥n proporcional entre la tensi√≥n por cortante y el cambio del gradiente vertical de velocidad. Donde el coeficiente de proporcionalidad $\mu$ se llama viscosidad din√°mica del fluido. Para flujos se suele utilizar la viscosidad cinem√°tica que es la viscosidad din√°mica dividido la densidad, con dimensiones de $L^2 T^{-1}$
 
 \subsection{Flujos viscosos}
 
-En la realidad siempre existe viscosidad en los flujos. A˙n asÌ podemos encontrar circunstancias en donde el flujo se vuelva \emph{laminar}.
+En la realidad siempre existe viscosidad en los flujos. A√∫n as√≠ podemos encontrar circunstancias en donde el flujo se vuelva \emph{laminar}.
 
 \subsubsection{Flujo laminar}
 
-Se caracteriza por ser suave, ordenado y de movimiento lento, donde las capas adyasentes de fluidose deslizan entre sÌ con muy poca transferencia (solo a nivelmolecular) de propiedades a travÈs de ellas. El campo de flujo, la temperatura asociada y los campos de concentraciÛn son regulares y predecibles y solo varÌan gradualmente en tiempo y espacio.
+Se caracteriza por ser suave, ordenado y de movimiento lento, donde las capas adyasentes de fluidose deslizan entre s√≠ con muy poca transferencia (solo a nivelmolecular) de propiedades a trav√©s de ellas. El campo de flujo, la temperatura asociada y los campos de concetraci√≥n son regulares y predecibles y solo var√≠an gradualmente en tiempo y espacio.
 
 \subsubsection{Flujo turbulento}
 
-Son movimientos altamente irregualres, casi aleatorios, tridimensionales, altamente rotantes, disipativos y muy difusos (mezcla). Todas las propiedades escalares y las del flujo fluctuan tanto en tiempo como en espacio, con un amplio rango temporal y espacial. Por ejemplo: las fluctuaciones de velocidad en la ABL van desde $10^{-3}\mathrm{s}$ a $10^4\mathrm{s}$ y la correspondiente al espacio va desde $10^{-3}\mathrm{m}$ a $10^4\mathrm{m}$ - del orden del millÛn en rango. Es por esto que es imposible predecir o calcular exactamente a los movimientos turbulentos como funciones del tiempo y el espacio; normalmente se utilizan los promedios estadÌsticos de las propiedades.
+Son movimientos altamente irregualres, casi aleatorios, tridimensionales, altamente rotantes, disipativos y muy difusos (mezcla). Todas las propiedades escalares y las del flujo fluctuan tanto en tiempo como en espacio, con un amplio rango temporal y espacial. Por ejemplo: las fluctuaciones de velocidad en la ABL van desde $10^{-3}\mathrm{s}$ a $10^4\mathrm{s}$ y la correspondiente al espacio va desde $10^{-3}\mathrm{m}$ a $10^4\mathrm{m}$ - del orden del mill√≥n en rango. Es por esto que es imposible predecir o calcular exactamente a los movimientos turbulentos como funciones del tiempo y el espacio; normalmente se utilizan los promedios estad√≠sticos de las propiedades.
 
 
 
