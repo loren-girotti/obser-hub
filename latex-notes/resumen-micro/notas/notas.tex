@@ -180,7 +180,7 @@ Coriolis, quedando
     \centering
     \includegraphics[width=0.6\linewidth]{img/laminar-fluxes.png}
     \caption{(a) Flujo \emph{plane-Couette}; (b) flujo canalizado;
-    (c) flujo gravitacional}
+    (c) flujo gravitacional.}
     \label{fig:laminar-flows}
 \end{figure}
 
@@ -278,6 +278,54 @@ medida que la profundidad aumenta ($z<0$), la corriente disminuye su
 magnitud y la dirección es cada vez más perpendicular al esfuerzo
 superficial inicial.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{img/ekman-HS.png} 
+    \caption{Hodógrafas: (a) debajo de la superficie del mar; (b)
+    encima de una superficie sólida con un gradiente de presión
+    constante.}
+    \label{fig:ekman}
+\end{figure}
+
+\subsection{Capa de Ekman por encima de superficie}
+Cuando el aire entra en contacto con un gran cuerpo de agua, o con el
+terreno; la fricción desvía el viento del balance geostrófico,
+generando así otra espiral de Ekman, esta vez como se muestra en la
+Figura \ref{fig:ekman} (b).
+\par Asumiendo un gradiente de presión uniforme en las cercanías de
+la superficie o en el océano; considerando la superficie plana y
+uniforme, y el flujo laminar, las ecuaciones quedan:
+
+\begin{gather}
+    -fv=-\frac{1}{\rho}\frac{\partial p}{\partial x}+\nu \frac{d^2u}{dz^2}\\
+    fu=-\frac{1}{\rho}\frac{\partial p}{\partial y}+\nu \frac{d^2v}{dz^2}
+\end{gather}
+
+\par Expresando los gradientes de presión en términos del viento
+geostrófico, las ecuaciones quedan:
+
+\begin{gather}
+    -f(v-V_{g})=\nu\frac{d^2(u-U{g})}{dz^2}\\
+    f(u-U_{g})=\nu\frac{d^2(v-V_{g})}{dz^2}
+\end{gather}
+
+\par Si tomamos al eje $x$ orientado en la dirección del viento
+geostrófico, con el módulo $G=\sqrt{U_{g}^2+V_{g}^2}$ la solución 
+queda
+
+\begin{gather}
+    u=G[1-e^{-az}\cos{(az)}]\\
+    v=Ge^{-az}\sin{(az)}.
+\end{gather}
+
+\par En la Figura \ref{fig:ekman} (b) podemos observar como el viento
+rota de forma antihoraria con la altura.
+
+\paragraph{Altura de la capa de Ekman} 
+\par Está dada por $h_{E}=\pi\sqrt{2\nu/f}$, 
+donde $f\approx 10^{-4}s^{-1}$ la altura es de unos $1.7\mathrm{m}$
+(en el océano la profundidad de la espiral de Ekman es de 
+aproximadamente $0.5\mathrm{m}$)
 
 
 \end{document}

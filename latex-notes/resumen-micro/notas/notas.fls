@@ -178,9 +178,15 @@ INPUT ./img/laminar-fluxes.png
 INPUT ./img/laminar-fluxes.png
 INPUT ./img/laminar-fluxes.png
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
+INPUT ./img/ekman-HS.png
+INPUT ./img/ekman-HS.png
+INPUT ./img/ekman-HS.png
+INPUT ./img/ekman-HS.png
+INPUT ./img/ekman-HS.png
 INPUT notas.aux
 INPUT ./notas.out
 INPUT ./notas.out
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
