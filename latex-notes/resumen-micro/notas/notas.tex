@@ -146,6 +146,18 @@ deja estudiar con más exactitud la turbulencia en la PBL.
 donde $U$ es la velocidad característica y $L$ es la longitud de 
 escala.
 
+\subsection{Longitud de mezcla}
+Se define como la distancia que recorre el elemento de fluido hasta que
+su cantidad de movimiento equipara a la del medio que lo rodea. $l_z$
+es la longitud de mezcla media vertical.
+
+\paragraph{Coeficiente de intercambio turbulento de cantidad de movimiento}
+$K$.
+\par Se define con unidades dadas por $[K]=L^{2}T^{-1}$ como 
+\begin{equation}
+    K_{z}=l_{z}^{2}\left|\frac{\partial \bar{u}}{\partial z}\right|
+\end{equation}
+
 \section{Ecuación de Navier-Stokes}
 Aplicando la segunda ley de Newton y considerando la 
 conservación de momento en un volumen elemental de fluido, 
@@ -252,6 +264,58 @@ $x$, tenemos
 En la Figura \ref{fig:laminar-flows} se ven los distintos esquemas
 correspondientes a los flujos laminares descritos anteriormente.
 
+
+\chapter{Subcapas de la PBL}
+Las alturas promedio de las subcapas en la PBL se pueden ver en la
+figura \ref{fig:subcapas-pbl}.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{img/subcapas_PBL.png}
+    \caption{Alturas promedio de las subcapas de la PBL.}
+    \label{fig:subcapas-pbl}
+\end{figure}
+
+En donde $H$ representa la altura en la cual se anula la fuerza de
+fricción y $h$ es en donde la \emph{tensión turbulenta} disminuye un
+10\% de su valor en la superficie.
+
+\section{Variación del viento con la altura en capa de superficie}
+Alineando el eje $x$ en la dirección del movimiento y considerando una
+tensión turbulenta constante con la altura, definimos \emph{velocidad
+de fricción constante} como
+
+\begin{equation}
+    u_{*}^{2}=\frac{\tau}{\rho}>0
+\end{equation}
+
+\par Por otro lado, se definió
+
+\begin{equation}
+    -\bar{u'w'}=k \frac{\partial u}{\partial z}=u_{*}^{2}
+\end{equation}
+
+con $k=l^{2}\left|\partial u/\partial z\right|$, donde $l$ es la
+longitud de mezcla.
+
+\par \emph{Prandlt} propuso $l=kz$ siendo $k$ la constante de \emph{Von
+Karman} aproximadamente 0.35-0.40. De esta manera se obitiene el
+\textbf{perfil logarítimico del viento} (módulo):
+
+\begin{equation}
+    u=\frac{u_{*}}{k}\ln{\frac{z}{z_0}},\qquad z_0:\textrm{longitud de rugosidad}
+\end{equation}
+
+\par Valores típicos de $z_0$
+\begin{itemize}
+    \item 0.001m en agua calma o nieve fresca.
+    \item 0.01-0.1m en pasto corto.
+    \item 1m en bosques.
+\end{itemize}
+$z_0$ se determina con mediciones del viento a diferentes alturas y se
+utiliza reresión lineal.
+
+\section{Variación del viento con altura en la capa espiral}
+
 \section{Capas laminares de Ekman}
 
 \subsection{Capa de Ekman debajo de la superficie del mar}
@@ -321,11 +385,15 @@ queda
 \par En la Figura \ref{fig:ekman} (b) podemos observar como el viento
 rota de forma antihoraria con la altura.
 
-\paragraph{Altura de la capa de Ekman} 
-\par Está dada por $h_{E}=\pi\sqrt{2\nu/f}$, 
-donde $f\approx 10^{-4}s^{-1}$ la altura es de unos $1.7\mathrm{m}$
-(en el océano la profundidad de la espiral de Ekman es de 
-aproximadamente $0.5\mathrm{m}$)
+%----- UTILIZAR LOS APUNTES DE GUILLERMO ------------------
+%\paragraph{Altura de la capa de Ekman} 
+%\par Está dada por $h_{E}=\pi\sqrt{2\nu/f}$, 
+%donde $f\approx 10^{-4}s^{-1}$ la altura es de unos $1.7\mathrm{m}$
+%(en el océano la profundidad de la espiral de Ekman es de 
+%aproximadamente $0.5\mathrm{m}$)
+%##########################################################
+
+
 
 
 \end{document}
