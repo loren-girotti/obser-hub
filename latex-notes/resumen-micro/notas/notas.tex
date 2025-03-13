@@ -1,4 +1,4 @@
-\documentclass[openany]{book}
+\documentclass[openany,a4]{book}
 %% PAQUETES %%
 \usepackage[utf8]{inputenc}
 \usepackage{titling}
@@ -19,6 +19,11 @@
 \setlength{\textwidth}{130mm}
 \setlength{\textheight}{190mm}
 \graphicspath{img/}
+
+%macros
+\newcommand{\dpar}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\prom}[1]{\overline{#1}}
+%---------------------------------------------
 
 
 %% RE ESTILIZACION DE COMNADOS
@@ -73,90 +78,7 @@ suave, horizontal, homogénea, extensiva y opaca a la radiación.
 La energía disponible para tal superficie se simplifica de manera 
 tal que solo depende de flujos verticales de energía.
 
-\chapter{Flujos}
-\section{Definiciones}
-
-\subsection{Viscosidad}
-
-Es una propiedad molecular del fluido que representa la resistencia interna del mismo a la deformación. 
-En un fluido \emph{ideal} o \emph{no viscoso} se asume un flujo 
-no turbulento o laminar, en consecuencia no hay transferencias 
-de momento, calor ni masa debido a la mezcla turbulenta; sino 
-que las propiedades son transportadas a lo largo de las lineas 
-de corriente producto de la advección. Por otro lado, la 
-condición de no viscosidad implica que ante la interacción del 
-fluido con otro cuya densidad sea significativamente diferente; 
-o con una superficie, no habrá fricción entre ellos.
-
-\subsection{Fluidos Newtonianos}
-La viscosidad es responsable de la resistencia friccional entre capas adyacentes de fluido; la resistencia por unidad de área se llama \emph{tensión por cortante} y se asocia al movimiento relativo entre las capas.
-
-Los fluidos newtonianos son aquellos en donde hay una relación 
-proporcional entre la tensión por cortante y el cambio del 
-gradiente vertical de velocidad. Donde el coeficiente de 
-proporcionalidad $\mu$ se llama viscosidad dinámica del fluido. 
-Para flujos se suele utilizar la viscosidad cinemática que es la 
-viscosidad dinámica dividido la densidad, con dimensiones de 
-$L^2 T^{-1}$.
-
-\subsection{Flujos viscosos}
-
-En la realidad siempre existe viscosidad en los flujos. Aún 
-así podemos encontrar circunstancias en donde el flujo se 
-vuelva \emph{laminar}.
-
-\subsection{Flujo laminar}
-
-Se caracteriza por ser suave, ordenado y de movimiento lento, donde 
-las capas adyasentes de fluido se deslizan entre sí con muy poca 
-transferencia (solo a nivel molecular) de propiedades a través de 
-ellas. El campo de flujo, la temperatura asociada y los campos de 
-concetración son regulares y predecibles y solo varían gradualmente 
-en tiempo y espacio.
-
-\subsection{Flujo turbulento}
-
-Son movimientos altamente irregualres, casi aleatorios, 
-tridimensionales, altamente rotantes, disipativos y muy difusos 
-(mezcla). Todas las propiedades escalares y las del flujo 
-fluctuan tanto en tiempo como en espacio, con un amplio rango 
-temporal y espacial. Por ejemplo: las fluctuaciones de velocidad en 
-la ABL van desde $10^{-3}\mathrm{s}$ a $10^4\mathrm{s}$ y la 
-correspondiente al espacio va desde $10^{-3}\mathrm{m}$ a 
-$10^4\mathrm{m}$ - del orden del millón en rango. Es por esto 
-que es imposible predecir o calcular exactamente a los movimientos 
-turbulentos como funciones del tiempo y el espacio; normalmente 
-se utilizan los promedios estadísticos de las propiedades.
-
-\subsection{Número de Richardson}
-\begin{equation}
-    \mathrm{Ri}=\frac{g}{T_{v}}\frac{\partial \Theta_{v}}{\partial z}\left|\frac{\partial V}{\partial z}\right|^{-2}
-\end{equation}
-\par El número de Richardson es una buena medida de la 
-turbulencia y provee un criterio simple para la existencia o no 
-existencia de turbulencia en un entorno estable estratificado.
-\par Un $\mathrm{Ri}>0.25$ indica poco o casi nulo entorno 
-turbulento. Por lo tanto, un perfil vertical de $\mathrm{Ri}$ 
-deja estudiar con más exactitud la turbulencia en la PBL.
-
-\subsection{Número de Reynolds}
-\begin{equation}
-    \mathrm{Re}=\frac{UL}{\nu}
-\end{equation}
-donde $U$ es la velocidad característica y $L$ es la longitud de 
-escala.
-
-\subsection{Longitud de mezcla}
-Se define como la distancia que recorre el elemento de fluido hasta que
-su cantidad de movimiento equipara a la del medio que lo rodea. $l_z$
-es la longitud de mezcla media vertical.
-
-\paragraph{Coeficiente de intercambio turbulento de cantidad de movimiento}
-$K$.
-\par Se define con unidades dadas por $[K]=L^{2}T^{-1}$ como 
-\begin{equation}
-    K_{z}=l_{z}^{2}\left|\frac{\partial \bar{u}}{\partial z}\right|
-\end{equation}
+\chapter{Sobre el sistema de ecuaciones}
 
 \section{Ecuación de Navier-Stokes}
 Aplicando la segunda ley de Newton y considerando la 
@@ -182,7 +104,121 @@ segundo orden. Prácticamente imposibles de resolver, por lo tanto las
 soluciones analíticas se reservan sólo para casos de flujos laminares 
 de baja velocidad.
 
-\section{Flujo laminar entre placas paralelas}
+Sin tensores de Reynolds, es decir, sin considerar turbulencia, tenemos 6
+ecuaciones con 6 incógnitas: $u,\,v,\,w,\,p,\,\rho,\,T$
+
+\begin{itemize}
+	\item 3 ecuaciones con conservación de cantidad de movimiento:
+		$f(u,v,w)$,
+	\item 1 ecuación de conservación de masa: $f(\rho)$,
+	\item 1 ecuación de conservación de energía: $f(T)$,
+	\item 1 ecuación de estado de gases: $f(p)$.
+\end{itemize}
+
+\par Cuando incluimos los tensores de Reynolds obtengo un total de 27 variables
+nuevas. Por lo cual no es viable cerrar el sistema con más ecuaciones.
+
+
+\section{Clausura del sistema}
+Reemplazamos las tensiones de Reynolds con variables de flujo medio.
+Se denomina \emph{clausura del sistema de ecuaciones por flujo turbulento}.
+
+\begin{itemize}
+	\item Clausura de primer orden: reemplazo $\prom{u'u'},\prom{u'v'},
+\dots$ por variables del flujo medio.
+	\item Clausura de segundo orden: retengo las ecuaciones que contienen:
+		$\dpar{\prom{u'u'}}{t},\dots$ y reemplazo $\prom{u'u'u'},\dots$ por
+		variables de flujo medio.
+\end{itemize}
+		
+
+\chapter{Flujos}
+\section{Definiciones}
+
+\subsubsection{Viscosidad}
+
+Es una propiedad molecular del fluido que representa la resistencia interna del mismo a la deformación. 
+En un fluido \emph{ideal} o \emph{no viscoso} se asume un flujo 
+no turbulento o laminar, en consecuencia no hay transferencias 
+de momento, calor ni masa debido a la mezcla turbulenta; sino 
+que las propiedades son transportadas a lo largo de las lineas 
+de corriente producto de la advección. Por otro lado, la 
+condición de no viscosidad implica que ante la interacción del 
+fluido con otro cuya densidad sea significativamente diferente; 
+o con una superficie, no habrá fricción entre ellos.
+
+\subsubsection{Fluidos Newtonianos}
+La viscosidad es responsable de la resistencia friccional entre capas adyacentes de fluido; la resistencia por unidad de área se llama \emph{tensión por cortante} y se asocia al movimiento relativo entre las capas.
+
+Los fluidos newtonianos son aquellos en donde hay una relación 
+proporcional entre la tensión por cortante y el cambio del 
+gradiente vertical de velocidad. Donde el coeficiente de 
+proporcionalidad $\mu$ se llama viscosidad dinámica del fluido. 
+Para flujos se suele utilizar la viscosidad cinemática que es la 
+viscosidad dinámica dividido la densidad, con dimensiones de 
+$L^2 T^{-1}$.
+
+\subsubsection{Flujos viscosos}
+
+En la realidad siempre existe viscosidad en los flujos. Aún 
+así podemos encontrar circunstancias en donde el flujo se 
+vuelva \emph{laminar}.
+
+\subsubsection{Flujo laminar}
+
+Se caracteriza por ser suave, ordenado y de movimiento lento, donde 
+las capas adyasentes de fluido se deslizan entre sí con muy poca 
+transferencia (solo a nivel molecular) de propiedades a través de 
+ellas. El campo de flujo, la temperatura asociada y los campos de 
+concetración son regulares y predecibles y solo varían gradualmente 
+en tiempo y espacio.
+
+\subsubsection{Flujo turbulento}
+
+Son movimientos altamente irregualres, casi aleatorios, 
+tridimensionales, altamente rotantes, disipativos y muy difusos 
+(mezcla). Todas las propiedades escalares y las del flujo 
+fluctuan tanto en tiempo como en espacio, con un amplio rango 
+temporal y espacial. Por ejemplo: las fluctuaciones de velocidad en 
+la ABL van desde $10^{-3}\mathrm{s}$ a $10^4\mathrm{s}$ y la 
+correspondiente al espacio va desde $10^{-3}\mathrm{m}$ a 
+$10^4\mathrm{m}$ - del orden del millón en rango. Es por esto 
+que es imposible predecir o calcular exactamente a los movimientos 
+turbulentos como funciones del tiempo y el espacio; normalmente 
+se utilizan los promedios estadísticos de las propiedades.
+
+\subsubsection{Número de Richardson}
+\begin{equation}
+    \mathrm{Ri}=\frac{g}{T_{v}}\frac{\partial \Theta_{v}}{\partial z}\left|\frac{\partial V}{\partial z}\right|^{-2}
+\end{equation}
+\par El número de Richardson es una buena medida de la 
+turbulencia y provee un criterio simple para la existencia o no 
+existencia de turbulencia en un entorno estable estratificado.
+\par Un $\mathrm{Ri}>0.25$ indica poco o casi nulo entorno 
+turbulento. Por lo tanto, un perfil vertical de $\mathrm{Ri}$ 
+deja estudiar con más exactitud la turbulencia en la PBL.
+
+\subsubsection{Número de Reynolds}
+\begin{equation}
+    \mathrm{Re}=\frac{UL}{\nu}
+\end{equation}
+donde $U$ es la velocidad característica y $L$ es la longitud de 
+escala.
+
+\subsubsection{Longitud de mezcla}
+Se define como la distancia que recorre el elemento de fluido hasta que
+su cantidad de movimiento equipara a la del medio que lo rodea. $l_z$
+es la longitud de mezcla media vertical.
+
+\subsubsection{Coeficiente de intercambio turbulento de cantidad de movimiento $K$.}
+\par Se define con unidades dadas por $[K]=L^{2}T^{-1}$ como 
+\begin{equation}
+    K_{z}=l_{z}^{2}\left|\frac{\partial \bar{u}}{\partial z}\right|
+\end{equation}
+
+\section{Ejemplos de distintos escenarios ideales}
+
+\subsection{Flujo laminar entre placas paralelas}
 Considerando flujos estacionarios laminares entre dos placas
 fijas, paralelas e infinitas; los términos de inercia se cancelan. Además 
 para flujos de laboratorio de pequeña escala podemos despreciar
@@ -206,7 +242,7 @@ dicha presión elimina la dependencia de la gravedad. Esto no
 puede asumirse cuando la gravedad es un forzante de movimiento,
 por ejemplo cuando tenemos un flujo sobre una pendiente.
 
-\section{Flujo laminar \textit{plane-Coette}}
+\subsection{Flujo laminar \textit{plane-Coette}}
 Con flujo laminar entre dos placas paralelas, pero en este caso
 una es fija y la otra se mueve en la misma dirección que el flujo.
 Las condiciones de borde quedan:
@@ -223,7 +259,7 @@ de perfiles de velocidades lineales y parabólicos.
     \frac{u}{U_h}=\frac{z}{h}-\frac{h^2}{2\mu U_h}\frac{\partial p'}{\partial x}\frac{z}{h}\left(1-\frac{z}{h}\right)
 \end{equation}
 
-\section{Flujo canalizado}
+\subsection{Flujo canalizado}
 Con el flujo laminar bajo condiciones de borde tales que:
 
 \begin{equation}
@@ -238,7 +274,7 @@ Se obtiene un perfil cuadrático de velocidades:
     u=-\frac1{2\mu}\frac{\partial p'}{\partial x}z(h-z).
 \end{equation}
 
-\section{Flujo gravitacional con pendiente}
+\subsection{Flujo gravitacional con pendiente}
 Acá consideramos flujo unidireccional con una superficie libre 
 u otro flujo gravitacional sobre una superficie uniformemente
 inclinada. Considerando una inclinación $\beta$ con respecto a
@@ -264,6 +300,7 @@ $x$, tenemos
 En la Figura \ref{fig:laminar-flows} se ven los distintos esquemas
 correspondientes a los flujos laminares descritos anteriormente.
 
+\section{Tensiones turbulentas y transporte vertical de cantidad de movimiento}
 
 \chapter{Subcapas de la PBL}
 Las alturas promedio de las subcapas en la PBL se pueden ver en la
@@ -394,6 +431,5 @@ rota de forma antihoraria con la altura.
 %##########################################################
 
 
-
-
 \end{document}
+
