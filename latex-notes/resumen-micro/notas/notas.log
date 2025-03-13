@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.18)  10 MAR 2025 16:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.18)  12 MAR 2025 10:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -376,11 +376,11 @@ LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <10> not available
 
 ]
 Cap\'{\i }tulo 2.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 88.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 88.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -390,64 +390,77 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 
 [4]
-<img/laminar-fluxes.png, id=129, 254.45062pt x 395.22656pt>
+Cap\'{\i }tulo 3.
+
+
+[5
+
+]
+
+[6]
+<img/laminar-fluxes.png, id=152, 254.45062pt x 395.22656pt>
 File: img/laminar-fluxes.png Graphic file (type png)
 <use img/laminar-fluxes.png>
-Package pdftex.def Info: img/laminar-fluxes.png  used on input line 193.
+Package pdftex.def Info: img/laminar-fluxes.png  used on input line 224.
 (pdftex.def)             Requested size: 221.93375pt x 344.73083pt.
 
 
-LaTeX Info: Redefining \. on input line 224.
-LaTeX Info: Redefining \% on input line 224.
-[5]
-
-[6
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.239 \end{equation}
-                     <./img/laminar-fluxes.png (PNG copy)>]
-
-LaTeX Info: Redefining \. on input line 268.
-LaTeX Info: Redefining \% on input line 268.
-[7]
-Cap\'{\i }tulo 3.
-<img/subcapas_PBL.png, id=162, 456.20438pt x 307.90031pt>
-File: img/subcapas_PBL.png Graphic file (type png)
-<use img/subcapas_PBL.png>
-Package pdftex.def Info: img/subcapas_PBL.png  used on input line 273.
-(pdftex.def)             Requested size: 295.90977pt x 199.71938pt.
-
-
-[8
-
-
+LaTeX Info: Redefining \. on input line 249.
+LaTeX Info: Redefining \% on input line 249.
+[7
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.289 \end{equation}
+l.249 \end{equation}
+                     <./img/laminar-fluxes.png (PNG copy)>]
+
+[8]
+Cap\'{\i }tulo 4.
+<img/subcapas_PBL.png, id=177, 456.20438pt x 307.90031pt>
+File: img/subcapas_PBL.png Graphic file (type png)
+<use img/subcapas_PBL.png>
+Package pdftex.def Info: img/subcapas_PBL.png  used on input line 304.
+(pdftex.def)             Requested size: 295.90977pt x 199.71938pt.
+
+
+[9
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.320 \end{equation}
                      <./img/subcapas_PBL.png (PNG copy)>]
-<img/ekman-HS.png, id=168, 473.51906pt x 234.8775pt>
+<img/ekman-HS.png, id=183, 473.51906pt x 234.8775pt>
 File: img/ekman-HS.png Graphic file (type png)
 <use img/ekman-HS.png>
-Package pdftex.def Info: img/ekman-HS.png  used on input line 347.
+Package pdftex.def Info: img/ekman-HS.png  used on input line 378.
 (pdftex.def)             Requested size: 369.88582pt x 183.47968pt.
 
 
-LaTeX Info: Redefining \. on input line 359.
-LaTeX Info: Redefining \% on input line 359.
-[9]
+[10]
 
-[10
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2}) has been already used, duplicate ignored
+LaTeX Info: Redefining \. on input line 414.
+LaTeX Info: Redefining \% on input line 414.
+[11
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.383 \end{gather}
+l.414 \end{gather}
                    <./img/ekman-HS.png>]
+<img/turbulence-spectrum.png, id=207, 447.17062pt x 362.09505pt>
+File: img/turbulence-spectrum.png Graphic file (type png)
+<use img/turbulence-spectrum.png>
+Package pdftex.def Info: img/turbulence-spectrum.png  used on input line 430.
+(pdftex.def)             Requested size: 369.88582pt x 299.52217pt.
 
-LaTeX Info: Redefining \. on input line 399.
-LaTeX Info: Redefining \% on input line 399.
-[11] (./notas.aux
+
+[12
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.437 \end{document}
+                     <./img/turbulence-spectrum.png (PNG copy)>] (./notas.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -456,21 +469,21 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `notas.out' has not changed.
-(rerunfilecheck)             Checksum: 8E5EC63ED84C440AEA24D064E9A8F73A;4319.
+(rerunfilecheck)             Checksum: 43036A6EDBCF27EF7B1B53C737E8AE51;4556.
  ) 
 Here is how much of TeX's memory you used:
- 12082 strings out of 473584
- 186435 string characters out of 5728334
+ 12099 strings out of 473584
+ 186839 string characters out of 5728334
  1938905 words of memory out of 5000000
- 34759 multiletter control sequences out of 15000+600000
- 565456 words of font info for 62 fonts, out of 8000000 for 9000
+ 34772 multiletter control sequences out of 15000+600000
+ 565162 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,9n,79p,461b,491s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on notas.pdf (11 pages, 373786 bytes).
+ 75i,9n,79p,461b,535s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on notas.pdf (12 pages, 455458 bytes).
 PDF statistics:
- 296 PDF objects out of 1000 (max. 8388607)
- 238 compressed objects within 3 object streams
- 64 named destinations out of 1000 (max. 500000)
- 200 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 312 PDF objects out of 1000 (max. 8388607)
+ 252 compressed objects within 3 object streams
+ 69 named destinations out of 1000 (max. 500000)
+ 221 words of extra memory for PDF output out of 10000 (max. 10000000)
 
