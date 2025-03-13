@@ -73,6 +73,61 @@ suave, horizontal, homogénea, extensiva y opaca a la radiación.
 La energía disponible para tal superficie se simplifica de manera 
 tal que solo depende de flujos verticales de energía.
 
+\chapter{Sobre el sistema de ecuaciones}
+
+\par El movimiento de los fluidos es gobernado por la ecuación de 
+Navier-Stokes. El problema con ello es que ésta no tiene solución
+analítica, por lo cual debemos reducir el número de variables utilizando
+aproximaciones.
+
+\section{Ecuación de Navier-Stokes}
+Aplicando la segunda ley de Newton y considerando la 
+conservación de momento en un volumen elemental de fluido, 
+nos lleva a las \emph{ecuaciones de Navier-Stokes}:
+
+\begin{gather}
+   \frac{Du}{Dt}-fv=-\frac{1}{\rho}\frac{\partial p}{\partial x}+\nu\nabla^{2}u,\\
+   \frac{Dv}{Dt}+fu=-\frac{1}{\rho}\frac{\partial p}{\partial y}+\nu\nabla^{2}v,\\
+   \frac{Dw}{Dt}+g=-\frac{1}{\rho}\frac{\partial p}{\partial z}+\nu\nabla^{2}w.
+\end{gather}
+
+\par Los primeros términos son los \emph{términos inerciales},
+ los segundos representan los \emph{términos de Coriolis} 
+ (despreciando Coriolis en la vertical) y la aceleración de la 
+ gravedad en la vertical. En el miembro derecho tenemos la 
+ fuerza asociada al \emph{gradiente de presión} y \emph{las 
+ fuerzas de roce}.
+
+\par Para \emph{fluidos viscosos} necesitamos este set completo de 
+ecuaciones que son ecuaciones diferenciales parciales no lineales de 
+segundo orden. Prácticamente imposibles de resolver, por lo tanto las 
+soluciones analíticas se reservan sólo para casos de flujos laminares 
+de baja velocidad.
+
+\section{Definiciones}
+Por lo general trataremos con \emph{perturbaciones} que oscilan o
+fluctúan sobre un \emph{valor medio}.
+\begin{itemize}
+    \item Valor medio: \begin{equation*}
+        \bar{u}=\frac{1}{T}\int_{t_0-\frac{1}{2}T}^{t_0+\frac{1}{2}T}udt
+    \end{equation*}
+    \item Valor instantáneo: $u=\bar{u}+u'$
+\end{itemize}
+Se sigue entonces
+\begin{itemize}
+    \item $\overline{u'}=0$
+    \item $\overline{\bar{u}}=\bar{u}$
+    \item $\overline{ku}=k\bar{u}$
+    \item $\overline{u+v}=\bar{u}+\bar{v}$
+\end{itemize}
+
+\section{Ecuación de movimiento en régimen turbulento}
+\begin{equation}
+    \frac{d\mathbb{V}}{dt}=-\frac{1}{\rho}\nabla p-g\Bbbk-2\Omega\times\mathbb{V}+\frac{\mu}{\rho}\nabla^2\mathbb{V}-\nabla\cdot\left(\overline{\mathbb{V}'\mathbb{V}'}\right)
+\end{equation}
+
+
+
 \chapter{Flujos}
 \section{Definiciones}
 
@@ -157,30 +212,6 @@ $K$.
 \begin{equation}
     K_{z}=l_{z}^{2}\left|\frac{\partial \bar{u}}{\partial z}\right|
 \end{equation}
-
-\section{Ecuación de Navier-Stokes}
-Aplicando la segunda ley de Newton y considerando la 
-conservación de momento en un volumen elemental de fluido, 
-nos lleva a las \emph{ecuaciones de Navier-Stokes}:
-
-\begin{gather}
-   \frac{Du}{Dt}-fv=-\frac{1}{\rho}\frac{\partial p}{\partial x}+\nu\nabla^{2}u,\\
-   \frac{Dv}{Dt}+fu=-\frac{1}{\rho}\frac{\partial p}{\partial y}+\nu\nabla^{2}v,\\
-   \frac{Dw}{Dt}+g=-\frac{1}{\rho}\frac{\partial p}{\partial z}+\nu\nabla^{2}w.
-\end{gather}
-
-\par Los primeros términos son los \emph{términos inerciales},
- los segundos representan los \emph{términos de Coriolis} 
- (despreciando Coriolis en la vertical) y la aceleración de la 
- gravedad en la vertical. En el miembro derecho tenemos la 
- fuerza asociada al \emph{gradiente de presión} y \emph{las 
- fuerzas de roce}.
-
-\par Para \emph{fluidos viscosos} necesitamos este set completo de 
-ecuaciones que son ecuaciones diferenciales parciales no lineales de 
-segundo orden. Prácticamente imposibles de resolver, por lo tanto las 
-soluciones analíticas se reservan sólo para casos de flujos laminares 
-de baja velocidad.
 
 \section{Flujo laminar entre placas paralelas}
 Considerando flujos estacionarios laminares entre dos placas
@@ -291,7 +322,7 @@ de fricción constante} como
 \par Por otro lado, se definió
 
 \begin{equation}
-    -\bar{u'w'}=k \frac{\partial u}{\partial z}=u_{*}^{2}
+    -\overline{u'w'}=k \frac{\partial u}{\partial z}=u_{*}^{2}
 \end{equation}
 
 con $k=l^{2}\left|\partial u/\partial z\right|$, donde $l$ es la
@@ -299,7 +330,7 @@ longitud de mezcla.
 
 \par \emph{Prandlt} propuso $l=kz$ siendo $k$ la constante de \emph{Von
 Karman} aproximadamente 0.35-0.40. De esta manera se obitiene el
-\textbf{perfil logarítimico del viento} (módulo):
+\emph{perfil logarítimico del viento} (módulo):
 
 \begin{equation}
     u=\frac{u_{*}}{k}\ln{\frac{z}{z_0}},\qquad z_0:\textrm{longitud de rugosidad}
@@ -316,9 +347,9 @@ utiliza reresión lineal.
 
 \section{Variación del viento con altura en la capa espiral}
 
-\section{Capas laminares de Ekman}
+\subsection{Capas laminares de Ekman}
 
-\subsection{Capa de Ekman debajo de la superficie del mar}
+\subsubsection{Capa de Ekman debajo de la superficie del mar}
 Ignorando las olas superficiales y los gradientes horizontales tanto
 de presión como densidad sobre la superficie; los cambios en las
 corrientes justo por debajo de la misma inducidos por un viento
@@ -351,7 +382,7 @@ superficial inicial.
     \label{fig:ekman}
 \end{figure}
 
-\subsection{Capa de Ekman por encima de superficie}
+\subsubsection{Capa de Ekman por encima de superficie}
 Cuando el aire entra en contacto con un gran cuerpo de agua, o con el
 terreno; la fricción desvía el viento del balance geostrófico,
 generando así otra espiral de Ekman, esta vez como se muestra en la
@@ -393,6 +424,13 @@ rota de forma antihoraria con la altura.
 %aproximadamente $0.5\mathrm{m}$)
 %##########################################################
 
+\section{Espectro de la turbulencia}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{img/turbulence-spectrum.png}    
+    \caption{Distribución de la energía de las perturbaciones turbulentas.}
+    \label{fig:turbulence-spectrum} 
+\end{figure}
 
 
 

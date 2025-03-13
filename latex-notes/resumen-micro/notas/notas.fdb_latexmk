@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1741633717.92735 "/home/loren/obser-hub/latex-notes/resumen-micro/notas/notas.tex" "notas.pdf" "notas" 1741633719.06282 0
-  "/home/loren/obser-hub/latex-notes/resumen-micro/notas/notas.tex" 1741633717.59193 13927 b7bdb17ee004d5e0efdbfc616ad6a13f ""
+["pdflatex"] 1741786389.30504 "/home/loren/obser-hub/latex-notes/resumen-micro/notas/notas.tex" "notas.pdf" "notas" 1741786390.62001 0
+  "/home/loren/obser-hub/latex-notes/resumen-micro/notas/notas.tex" 1741786388.93823 15280 bc4860213dfe8c56c0464ebad290b9f9 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -17,7 +17,6 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsl10.tfm" 1136768653 1508 efecb4a315fe0975509670a272d75ef5 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1136768653 1316 b636689f1933f24d1294acdf6041daaa ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss8.tfm" 1136768653 1296 d77f431d10d47c8ea2cc18cf45346274 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm" 1136768653 1272 e2d13f0df30bf3ad990bb9d028e37f34 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmssi10.tfm" 1136768653 1520 ca2bb4b78ac9800bd686e30c6d19ef95 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti12.tfm" 1136768653 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
@@ -30,10 +29,10 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1248133631 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb" 1248133631 35022 e40946b20bfdcd1099eafb2bcd9f25dd ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb" 1248133631 24457 5cbb7bdf209d5d1ce9892a9b80a307cc ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb" 1248133631 28902 2f5c04fd2884d1878057baa5aad22765 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb" 1248133631 25150 e0d09798d232ab9d00c5c0a8df6cc22d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
@@ -109,9 +108,10 @@
   "img/ekman-HS.png" 1740867900.52212 75892 b9a6a1cc67f058e887d37c5a9bcabf20 ""
   "img/laminar-fluxes.png" 1740594160.12303 52901 3b49a6c8535c461cc184b8d14e1e4e56 ""
   "img/subcapas_PBL.png" 1741626753.6624 25259 12c9baa5198a218234357a5152303337 ""
-  "notas.aux" 1741633718.94694 4696 c9f9ece21889b3a9ef923f8f70d4edac "pdflatex"
-  "notas.out" 1741633718.94994 4319 8e5ec63ed84c440aea24d064e9a8f73a "pdflatex"
-  "notas.tex" 1741633717.59193 13927 b7bdb17ee004d5e0efdbfc616ad6a13f ""
+  "img/turbulence-spectrum.png" 1741782395.06776 79038 579949e6b9b41db10aabc7eb654120d3 ""
+  "notas.aux" 1741786390.45224 5565 0ad5a1a7742516fb43dbade8a9fca125 "pdflatex"
+  "notas.out" 1741786390.45424 4556 43036a6edbcf27ef7b1b53c737e8ae51 "pdflatex"
+  "notas.tex" 1741786388.93823 15280 bc4860213dfe8c56c0464ebad290b9f9 ""
   (generated)
   "notas.aux"
   "notas.log"
