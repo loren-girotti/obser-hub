@@ -35,15 +35,15 @@ Instalar R y R studio.
 
 ---
 # Notas de R:
-###Tipos de variable:
+### Tipos de variable:
 - *Factor* (`factor`): Sirve para categorizar, podemos asignarles valores posibles.
 *R ES SENSIBLE A LAS MAYÚSCULAS*
 
-###Operadores:
+### Operadores:
 -`%in%` sirve para filtrar valores que estan *dentro* de un objeto.
 -`which` devuelve el/los indices de un array según la condición que le pase.
 
-###Estructura de los datos:
+### Estructura de los datos:
 - Vectores: 
 -- Coleciona elementos de la **misma clase**.
 -- Se construyen con `vec<-c(1,2,...)`.
