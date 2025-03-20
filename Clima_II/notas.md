@@ -45,38 +45,38 @@ Instalar R y R studio.
 
 ### Estructura de los datos:
 - Vectores: 
--- Coleciona elementos de la **misma clase**.
--- Se construyen con `vec<-c(1,2,...)`.
--- Accedemos a los elementos con corchetes `vec[i]`
+  - Coleciona elementos de la **misma clase**.
+  - Se construyen con `vec<-c(1,2,...)`.
+  - Accedemos a los elementos con corchetes `vec[i]`
 
 - Matrices y arreglos (*arrays*):
--- Todos los elementos deben ser de la **misma clase**.
--- Sintáxis `mat<-matrix()` o `arr<-array()`.
--- Accedemos a los valores registrados en la memoria con [,].
+  - Todos los elementos deben ser de la **misma clase**.
+  - Sintáxis `mat<-matrix()` o `arr<-array()`.
+  - Accedemos a los valores registrados en la memoria con [,].
 
 - Data frames
--- Estructura de datos bidimensional que puede tener elementos de **distinta clase**.
--- Podemos acceder a los elementos con [[]] o con $.
+  - Estructura de datos bidimensional que puede tener elementos de **distinta clase**.
+  - Podemos acceder a los elementos con [[]] o con $.
 
 - Listas
--- Estructura de datos *unidimensionales* puede almacenar **distintas estructuras de datos**
+  - Estructura de datos *unidimensionales* puede almacenar **distintas estructuras de datos**
 
 ### Estructuras de control
--if
+- if
 Sintaxis:
 ```
 if{logical}{
 operación
 }
 ```
--for loop
+- for loop
 Sintaxis:
 ```
 for(elemento in objeto){
 operacion con elemento
 }
 ```
--while
+- while
 Sintaxis:
 ```
 while(condicion logica){
