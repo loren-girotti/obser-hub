@@ -52,11 +52,11 @@ Instalar R y R studio.
 - Matrices y arreglos (*arrays*):
   - Todos los elementos deben ser de la **misma clase**.
   - Sintáxis `mat<-matrix()` o `arr<-array()`.
-  - Accedemos a los valores registrados en la memoria con [,].
+  - Accedemos a los valores registrados en la memoria con `[,]`.
 
 - Data frames
   - Estructura de datos bidimensional que puede tener elementos de **distinta clase**.
-  - Podemos acceder a los elementos con [[]] o con $.
+  - Podemos acceder a los elementos con `[[]]` o con `$`.
 
 - Listas
   - Estructura de datos *unidimensionales* puede almacenar **distintas estructuras de datos**
