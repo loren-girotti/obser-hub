@@ -84,3 +84,60 @@ det(a) #como es 0 no puedo sacar la inversa.
 #c)
 producto_matrices <- A%*%a # El producto matricial se hace con %*%, si hacemos con * hacemos elemento a elemento.
 suma_matrices <- A+a # Da error claramente porque no son del mismo orden.
+
+#----------------------------------------
+# EJERCICIO 7
+#a)
+df <- data.frame(Nombre=c("Lorenzo","Mateo","Narela","Guadalupe","Paola","Gabriel","Matias"),
+                 Apellido=c("Girotti","Rigo","Alvarez","Krivohlavy","Carrillo","Barroso","Lorenzo"),
+                 Edad=c(24,25,27,21,23,27,27))
+#b)
+df[[3]]
+df$Edad
+
+#c)
+factor(df$Edad)
+
+#---------------------------------------
+# EJERCICIO 8
+data("mtcars");mtcars
+#a)
+dim(mtcars) #Checkeo las dimnesiones y veo que tiene 11 variables (sin contar el nombre)
+
+#b)
+low_hp<-which(mtcars$hp<100)
+
+#c)
+gears<-mtcars[mtcars$gear>=4,] #subset que agarra todas las filas con 4 o mas cambios
+
+hp_prom<-mean(gears$hp)
+
+#------------------------------------
+# EJERCICIO 9
+#a)
+lista<-list(enso_xxi,a,df)
+
+#b)
+names(lista)<-c("vector","matriz","data frame")
+
+#c)
+length(lista[[1]]) #Para acceder al primer elemento de la lista debo utilizar doble corchete [[1]]
+nrow(lista[[3]])
+
+lista$vector[2]<-T # Como segundo elemento aparece el 1, indicando que es verdadero pero mantiene la clase de numeric.
+lista$vector[3]<-F;lista$vector # Acá vemos como reemplaza el false por un 0.
+
+#-------------------------------------
+# EJERCICIO 10
+#a)
+# Genero la memoria donde voy a guardar los pesos en kg. Le doy el tipo numeric y las dimensiones según las filas que tiene mtcars
+peso <- numeric(nrow(mtcars))
+
+#Hago un loop que corre el indice i desde 1 hasta la cantidad de filas que tiene mtcars (coincidiendo con la dim de mi vector)
+for(i in 1:nrow(mtcars)){
+  peso[i]<-mtcars$wt[i]*1000*0.453592 # Calculo cada componente y la guardo en la correspondiente componente del vector peso.
+}
+
+#b)
+sort(peso,decreasing = TRUE)
+
