@@ -141,3 +141,45 @@ for(i in 1:nrow(mtcars)){
 #b)
 sort(peso,decreasing = TRUE)
 
+#---------------------------------------
+# EJERCICIO 11
+data("iris");iris
+
+iris$cat1<-rep(0,nrow(iris))
+
+#a)
+
+for(i in 1:nrow(iris)){
+  if(iris$Petal.Length[i]>=5){
+    iris$cat1[i]<-"grande"
+  }
+  if(iris$Petal.Length[i]<5){
+    iris$cat1[i]<-"pequeño"
+  }
+}
+
+#b) Podemos utilizar acá el ifelse()
+iris$cat2<-ifelse(iris$Petal.Length>=5,"grande","pequeño")
+
+#-------------------------------------
+# EJERCICIO 12
+
+pp<-read.csv(file="/home/loren/obser-hub/Clima_II/tp1/Datos.csv")
+
+#b)
+max(pp$Nobs,na.rm=TRUE) #4
+min(pp$Nobs,na.rm=TRUE) #3
+
+#Según los resutlados de los maximos y minimos, interpreto que Nobs son el Núm
+# de observaciones realizadas en el día, donde NA significa que no hay observación.
+
+factor(pp$Estacion)
+
+#c)
+#Consulto los datos de PP no disponibles o "Not Available (NA)"
+pp[which(is.na(pp$PP)),]
+
+#d)
+dias_pp<-length(pp$PP[pp$PP>0]);dias_pp
+
+
