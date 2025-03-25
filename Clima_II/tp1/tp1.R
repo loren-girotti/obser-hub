@@ -163,8 +163,10 @@ iris$cat2<-ifelse(iris$Petal.Length>=5,"grande","pequeño")
 
 #-------------------------------------
 # EJERCICIO 12
+getwd()
+setwd("/home/lgirotti/obser-hub/Clima_II/tp1/")
 
-pp<-read.csv(file="/home/loren/obser-hub/Clima_II/tp1/Datos.csv")
+pp<-read.csv(file="./Datos.csv")
 
 #b)
 max(pp$Nobs,na.rm=TRUE) #4
