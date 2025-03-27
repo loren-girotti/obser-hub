@@ -163,25 +163,35 @@ iris$cat2<-ifelse(iris$Petal.Length>=5,"grande","pequeño")
 
 #-------------------------------------
 # EJERCICIO 12
-getwd()
-setwd("/home/lgirotti/obser-hub/Clima_II/tp1/")
+setwd("~/obser-hub/Clima_II")
 
-pp<-read.csv(file="./Datos.csv")
+data<-read.csv(file="./tp1/Datos.csv");data
 
 #b)
-max(pp$Nobs,na.rm=TRUE) #4
-min(pp$Nobs,na.rm=TRUE) #3
+class(data)
+#c) Conisdero los faltantes de datos de pp
+indices_na_aero<-which(is.na(data$PP) & data$Estacion=="AEROPARQUE AERO") #Obtengo los índices de los datos faltantes de AEROPARQUE
+indices_na_mdq<-which(is.na(data$PP) & data$Estacion=="MAR DEL PLATA AERO") #Obtengo los índices de los datos faltantes de MDQ
 
-#Según los resutlados de los maximos y minimos, interpreto que Nobs son el Núm
-# de observaciones realizadas en el día, donde NA significa que no hay observación.
+# Si comparamos los índices tenemos que mdq no tiene datos faltantes; en cambio aeroparque sí.
+indices_na_mdq
+indices_na_aero
 
-factor(pp$Estacion)
+# Obtenemos información sobre las fechas de los datos faltantes
+data[indices_na_aero,] #las fechas son del 29 de Julio y el 20 de Septiembre del 1975.
 
-#c)
-#Consulto los datos de PP no disponibles o "Not Available (NA)"
-pp[which(is.na(pp$PP)),]
 
 #d)
-dias_pp<-length(pp$PP[pp$PP>0]);dias_pp
+dias_pp_mdq<-length(which(data$PP>0 & data$Estacion=="MAR DEL PLATA AERO"))
+dias_pp_aero<-length(which(data$PP>0 & data$Estacion=="AEROPARQUE AERO"))
+
+dias_pp<-c(dias_pp_aero,dias_pp_mdq)
+names(dias_pp)<-c("AEROPARQUE AERO","MAR DEL PLATA AERO");dias_pp
+
+
+
+
+
+
 
 
