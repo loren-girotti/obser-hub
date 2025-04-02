@@ -74,6 +74,26 @@ for(i in 1:nrow(mdq)){
 }
 
 #e)
-mdq_tb<-filter(.data=data_rdr,Estacion=="MAR DEL PLATA AERO")
+mdq |>
+  select("Estacion","Fecha","PP") |>
+  mutate(Logico=ifelse(mdq$PP>0,"TRUE","FALSE"))
 
+#-----------
+#EJERCICIO 3
+pp_pergamino<-read_tsv(file="./tp2/Pergamino_INTA.tsv",na ="-99.9")
+
+#a)
+names(pp_pergamino)<-c("Year","Month","Day","PP","Tmax","Tmin","Logico")
+
+#b)
+pp_pergamino<-unite(pp_pergamino,"Fecha","Year","Month","Day",sep = "-")|>
+  select("Fecha","PP","Tmax","Tmin")
+
+pp_pergamino$Fecha<-ymd(pp_pergamino$Fecha)
+
+#c)
+pp_1996<-pp_pergamino |>
+  select("Fecha","PP") |>
+  filter(year(Fecha)==1996,PP>0) |>
+  summarise(Acumulado_1996=sum(PP))
 
