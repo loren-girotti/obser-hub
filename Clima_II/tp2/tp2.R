@@ -74,6 +74,61 @@ for(i in 1:nrow(mdq)){
 }
 
 #e)
-mdq_tb<-filter(.data=data_rdr,Estacion=="MAR DEL PLATA AERO")
+mdq |>
+  select("Estacion","Fecha","PP") |>
+  mutate(Logico=ifelse(mdq$PP>0,"TRUE","FALSE"))
+
+#-----------
+#EJERCICIO 3
+pp_pergamino<-read_tsv(file="./tp2/Pergamino_INTA.tsv",na ="-99.9")
+
+#a)
+names(pp_pergamino)<-c("Year","Month","Day","PP","Tmax","Tmin","Logico")
+
+#b)
+pp_pergamino<-unite(pp_pergamino,"Fecha","Year","Month","Day",sep = "-")|>
+  select("Fecha","PP","Tmax","Tmin")
+
+pp_pergamino$Fecha<-ymd(pp_pergamino$Fecha)
+
+#c)
+pp_1996<-pp_pergamino |>
+  select("Fecha","PP") |>
+  filter(year(Fecha)==1996,PP>0) |>
+  summarise(Acumulado_1996=sum(PP))
+
+#-------------
+# EJERCICIO 4
+caudales<-read_csv("./tp2/df_Caudales.csv")
+
+#a)
+library(purrr)
+missing_values<- function(vector){
+  nas_porcentual<-length(which(is.na(vector)))/length(vector)
+  return(nas_porcentual)
+}
+  
+#b)
+datos_faltantes<-select(.data=caudales,where(is.numeric)) |>
+  map(.f=missing_values)
+
+mas_datos<-which.min(datos_faltantes);names(mas_datos);datos_faltantes$PasodeIndios
+
+# PASO DE INDIOS NO TIENE NINGÚN DATO FALTANTE.
+
+#c)
+caudales_t<-pivot_longer(data=caudales,
+                         cols=c("Andacollo","BajadaDelAgrio","DiqueBallester",
+                                "LosCarrizos","LosMaitenes","PasodeIndios","Varvarco"),
+                         names_to = "Estaciones",
+                         values_to = "Caudal")
+
+caudales_t<-sort
+
+#d)
+
+                         
+
+
 
 
