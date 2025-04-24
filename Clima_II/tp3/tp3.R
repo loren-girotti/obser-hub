@@ -63,6 +63,42 @@ abs(IQR_y-sd_y)
 df%>%pivot_longer(cols=c(x,y),
                   names_to="Variable",
                   values_to="Valor")%>%
-  ggplot(aes(y=Valor,x=factor(Variable)))+
+  ggplot(aes(y=Valor,x=factor(Variable),fill=Variable))+
   geom_boxplot()+
   coord_trans(y="log10")
+  
+# No se puede ver el gráfico sin agregar la escala logarítmica. Esto se debe a que al tener una gran diferencia
+# de valores con los outsiders, la escala se estira para intentar graficarlos a todos.
+# Con una escala logarítmica podemos visualizar un poco mejor la distribución de los vectores.
+
+#----
+# EJERCICIO 3
+
+#a) 
+N<-100000
+gamma1<-rgamma(n=N,shape=1,scale=1)
+gamma3<-rgamma(n=N,shape=1,scale=3)
+gamma6<-rgamma(n=N,shape=1,scale=6)
+
+gammas<-tibble(gamma1,gamma3,gamma6)%>%pivot_longer(cols=c(gamma1,gamma3,gamma6),
+                                     names_to="Distribución",
+                                     values_to="Valor")
+
+#b)
+gammas%>%ggplot(aes(x=Valor,col=Distribución))+
+  geom_density()
+
+#La escala distribuye la frecuencia a lo largo de los valores, a mayor escala, una distribución más dispersa.
+
+#c) 
+gamma1<-rgamma(n=N,shape=1,scale=1)
+gamma3<-rgamma(n=N,shape=3,scale=1)
+gamma6<-rgamma(n=N,shape=6,scale=1)
+
+gammas<-tibble(gamma1,gamma3,gamma6)%>%pivot_longer(cols=c(gamma1,gamma3,gamma6),
+                                     names_to="Distribución",
+                                     values_to="Valor")
+gammas%>%ggplot(aes(x=Valor,col=Distribución))+
+  geom_density()
+  
+# El parámetro de forma nos varía el valor de la moda.
