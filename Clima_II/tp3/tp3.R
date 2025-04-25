@@ -102,3 +102,46 @@ gammas%>%ggplot(aes(x=Valor,col=Distribución))+
   geom_density()
   
 # El parámetro de forma nos varía el valor de la moda.
+
+#d)
+1-pgamma(10,shape=5,scale=1)
+
+#----
+# EJERCICIO 4
+
+library(moments)
+gamma<-rgamma(n=10000,shape=5,scale=1)
+
+df<-tibble(gamma)
+#a)
+df%>%
+  ggplot(aes(x=gamma))+
+  geom_histogram(fill="skyblue",color="black")+
+  geom_vline(aes(xintercept = media,color="Media"),size=0.8)+
+  scale_color_manual(name = "Referencia",values = c("Media"="red"))+
+  labs(title="Histograma de una muestra con tamaño 10000",
+       x = "Valor",
+       y = "Frecuencia")
+#b)
+media<-mean(gamma) #media muestral
+# se ve claro que no es simétrica la distribución respecto de la media.
+
+#c)
+asimetria<-skewness(gamma)
+#valor >0, lo cuál tiene sentido porque tiene una cola más larga a la derecha.
+
+#d)
+a<-rgamma(n=10000,shape=1,scale=1)
+b<-rgamma(n=10000,shape=3,scale=5)
+df<-tibble(a,b)%>%pivot_longer(cols=c(a,b),
+                               names_to="Distribucion",
+                               values_to="Valores")
+
+df%>%
+  ggplot(aes(x = Valores, fill = Distribucion)) +
+  geom_histogram(alpha = 0.5, position = "identity", bins = 50) +
+  labs(title = "Comparación de distribuciones Gamma",
+       x = "Valor",
+       y = "Frecuencia") +
+  theme_linedraw()
+
