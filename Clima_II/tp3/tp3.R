@@ -145,3 +145,16 @@ df%>%
        y = "Frecuencia") +
   theme_linedraw()
 
+#e)
+a_curt<-kurtosis(a)
+b_curt<-kurtosis(b)
+
+# La curtosis de la función gamma se refleja en la concentracíon de valores
+# respecto de la media.
+
+#----
+# Ejercicio 5
+setwd("~/obser-hub/Clima_II/tp3/")
+df<-read_csv("./LaQuiacaObservatorio.csv")
+
+
