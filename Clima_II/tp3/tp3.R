@@ -156,5 +156,60 @@ b_curt<-kurtosis(b)
 # Ejercicio 5
 setwd("~/obser-hub/Clima_II/tp3/")
 df<-read_csv("./LaQuiacaObservatorio.csv")
+df_inv<-df%>%
+  mutate(
+    mes = month(Fecha),
+    anio = year(Fecha)) %>% # Separo los meses y anios en columnas distintas
+  filter(mes %in% c(6,7,8)) %>% # Filtro por los meses de invierno
+  group_by(anio) %>% # Agrupo por anio
+  summarise(tmed_anual=mean(tmed, na.rm=T))
+
+df_inv%>%
+  ggplot(aes(x=tmed_anual))+
+  geom_density(color="darkblue")+
+  labs(
+    title="Densidad empírica de la temp media anual del invierno",
+    subtitle = "Promedio anual de JJA, desde 1961-2022",
+    x="Temp media anual",
+    y="Frecuencia")
+
+# La distribución se asemeja a una normal, cuyos parámetros característicos
+# son la media y el desvío.
+
+#b)
+library(fitdistrplus)
+descdist(df_inv$tmed_anual)
+# Según el gráfico de Cullen y Frey, la distribución se asemeja bien a la normal.
+
+#c)
+parametros<-mledist(df_inv$tmed_anual,"norm") # Cálculo de los parámetros a
+# a través del metodo de máxima verosimilitud.
+
+media<-parametros$estimate[1] # guardo la media y el sd desde la lista
+sd<-parametros$estimate[2]
+
+#d)
+
+df_inv%>%
+  ggplot(aes(x=tmed_anual))+
+  geom_density(color="darkblue")+
+  stat_function(fun = dnorm,
+                args = list(mean=media,sd=sd),
+                color = 'red')+
+  labs(
+    title="Densidad empírica vs Teórica",
+    x="Temp media anual",
+    y="Frecuencia")
+
+# el ajuste es bueno: se observa que las colas se asemejan, las medias coinciden
+# y la simetría es similar.
+
+#----
+# EJERCICIO 6
+
+pp<-read_csv('../tp1/Datos.csv')
+pp_aero<-pp%>%
+  dplyr::select(-Codigo,-Nobs)%>%
+  filter(Estacion=='AEROPARQUE AERO')
 
 
