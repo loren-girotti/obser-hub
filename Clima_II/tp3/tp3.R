@@ -206,10 +206,82 @@ df_inv%>%
 
 #----
 # EJERCICIO 6
-
+#a)
 pp<-read_csv('../tp1/Datos.csv')
-pp_aero<-pp%>%
+pp_aero_nov<-pp%>%
   dplyr::select(-Codigo,-Nobs)%>%
-  filter(Estacion=='AEROPARQUE AERO')
+  mutate(Mes=month(Fecha))%>%
+  filter(Estacion=='AEROPARQUE AERO',Mes=="11")
 
+pp_aero_nov%>%ggplot(aes(x=PP))+
+  geom_histogram(color="black",fill="skyblue")+
+  scale_x_continuous(breaks = seq(0,max(pp_aero_nov$PP),by=15))+
+  labs(title = "Histograma de pp de noviembre en Estación Aeroparque",
+       x= "PP [mm]",
+       y= "Frecuencia")+
+  theme_bw()
+  
+# se asemeja más a una distribucón Gamma.
+# Según la forma que presenta, tendrá que tener una escala baja y una forma alta
 
+#b)
+parametros<-mmedist(pp_aero_nov$PP,distr="gamma")$estimate
+
+#c)
+
+pp_aero_nov%>%ggplot(aes(x=PP))+
+  geom_histogram(color="black",fill="skyblue")+
+  scale_x_continuous(breaks = seq(0,max(pp_aero_nov$PP),by=15))+
+  geom_density()+
+  stat_function(fun=dgamma,args=parametros,size=1)+
+  labs(title = "Distribución Empírica vs Teórica",
+       x= "PP [mm]",
+       y= "Frecuencia")+
+  theme_bw()
+
+#----
+# Ejercicio 7
+load("./tp3/Datos.RData")
+
+dias_secos<-datos$PRCP<1
+cantidad_dias_secos <- sum(dias_secos, na.rm = TRUE)
+rachas <- rle(dias_secos)
+longitudes_rachas <-rachas$lengths[rachas$values == TRUE]
+longitudes_rachas[is.na(longitudes_rachas)] <- 0
+
+parametros_mme_nbinom<- mmedist(data = longitudes_rachas, distr = "nbinom")$estimate
+parametros_mme_gamma<- mmedist(data = longitudes_rachas, distr = "gamma")$estimate
+
+data_frame(longitudes_rachas)%>%
+  ggplot(aes(x=longitudes_rachas))+
+  geom_histogram(aes(y=..density..),fill="grey",col="black",bins=50)+
+  stat_function(fun=dnbinom, args = parametros_mme_nbinom, size=1, alpha=0.5, col='red')+
+  stat_function(fun=dgamma, args = parametros_mme_gamma, size=1, alpha=0.5, col='blue')+
+  labs(title="Histograma Dias con PP<1mm",
+       x="cantidad de dias secos",
+       y="Frecuencia")+
+  theme_bw()
+
+# Se ajusta mejor la gamma
+
+## Ejercicio 8---------------------------
+#a)
+datos<-tibble(datos)
+datos$MONTH<-month(ymd(datos$YEARMODA))
+datos$YEAR<-year(ymd(datos$YEARMODA))
+datos$DAY<-day(ymd(datos$YEARMODA))
+datos_otonio<-datos%>%
+  filter(MONTH%in%3:5)
+
+which(is.na(datos_otonio$MAX))
+which(is.na(datos_otonio$MIN))
+which(is.na(datos_otonio$DAY))
+
+#NO HAY DATOS FALTANTES EN EL OTOÑO AUSTRAL.
+
+#b)
+correlacion_temp<-cor(datos_otonio$MAX,datos_otonio$MIN)
+
+#c)
+
+#PREGUNTAR EL LUNES.
