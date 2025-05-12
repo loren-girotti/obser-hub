@@ -2,8 +2,7 @@
 setwd("~/obser-hub/Clima_II/")
 library(tidyverse)
 
-#----
-# Ejercicio 1
+##---- Ejercicio 1----
 rendimientos<-read_tsv("./tp5/Rendimientos.tsv")
 
 ggplot(rendimientos,aes(y=rendimientos$Rendimiento,x=rendimientos$Acumulado))+
@@ -33,10 +32,29 @@ ggplot(rendimientos,aes(y=rendimientos$Rendimiento,x=rendimientos$Acumulado))+
               col = "Modelo"))+
   scale_color_manual(name="Referencia",values=c("Modelo"="blue","Datos"="black"))+
   theme_bw()
-  
 
-#----
-# Ejercicio 4
+# Teniendo en cuenta los pocos datos de rendimiento, creo que es un buen ajuste
+# a simple vista. Se observa una relación directamente proporcional entre la
+# PP anual y el rendimiento. Hay que tener en cuenta que la PP es sólo de una 
+# localidad y el rendimiento de la soja es de toda la provincia.
+
+#d)
+# Sabemos que R^2=SSR/SST ==> SSR=R²*SST
+# es decir, a través del coeficiente de determinación, hallamos la varianza
+# explicada por el modelo, a través de la varianza original de los datos.
+
+resumen<-summary(modelo)
+coef_det<-round(resumen$r.squared,digits = 4)
+
+var_modelo<-round(coef_det*var(rendimientos$Rendimiento),digits = 4)
+
+# se calculan los errores cuadráticos medios tanto del modelo, como de la
+# variable predictando.
+
+# 
+
+
+##--- Ejercicio 4 ----
 caudales<-read_csv("./tp5/df_CaudalesAcumulados.csv")
 indices<-read_csv("./tp5/df_indices.csv")
 
