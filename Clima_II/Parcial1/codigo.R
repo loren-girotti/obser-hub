@@ -148,8 +148,40 @@ for(i in indices_na){
 # EJERCICIO 2 -----------------------------------------------------------------
 
 tmax<-read_csv("./1ra_Fecha/Tmax_LP.csv")
+indices<-read_csv("./1ra_Fecha/Indices.csv")
+
+tmax%>%ggplot(aes(x=Anio,y=Media))+
+  geom_line(color="red")+
+  geom_abline(slope=pendiente,intercept=ordenada,color="gray")+
+  labs(title="Serie temporal de temperatura media La Plata AERO",
+       subtitle = "Meses de Noviembre-Diciembre. (La línea gris marca la tendencia de la serie)",
+       x = "Año",
+       y = "Tmax [°C]")+
+  theme_bw()
+
+# Compruebo la tendencia lineal con una regresion lineal simple
+
+modelo<-lm(Media~Anio,data=tmax)
+pendiente<-modelo$coefficients[2]
+ordenada<-modelo$coefficients[1]
 
 
 
 
+#b)
+library(fitdistrplus)
+library(moments)
 
+#realizo el grafico de funcion de densidad empirica de tmax.
+tmax%>%ggplot(aes(x=Media))+
+  geom_density(color="red")+
+  labs(title = "Función de densidadd de probabilidad empírica",
+       x = "Tmax [°C]",
+       y = "Frecuencia relativa")+
+  theme_bw()
+
+#c)
+# ajusto a una normal con el método de máxima verosimilutd utilizando la
+# librería fitdistrplus
+
+fitdist(tmax$Media,distr = normal,method = "mle")
