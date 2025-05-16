@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.24)  15 MAY 2025 19:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.24)  15 MAY 2025 23:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -318,8 +318,10 @@ tex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count298
 \l__pdf_internal_box=\box54
+) (informe.aux
+LaTeX Info: Redefining \. on input line 11.
+LaTeX Info: Redefining \% on input line 11.
 )
-No file informe.aux.
 \openout1 = `informe.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
@@ -342,6 +344,7 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
 LaTeX Info: Redefining \. on input line 19.
 LaTeX Info: Redefining \% on input line 19.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -410,6 +413,7 @@ Package color Info: Driver file: pdftex.def on input line 149.
 (C:\Users\loren\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 )
 Package hyperref Info: Link coloring ON on input line 19.
+ (informe.out) (informe.out)
 \@outlinefile=\write3
 \openout3 = `informe.out'.
 
@@ -419,7 +423,13 @@ Package hyperref Info: Link coloring ON on input line 19.
 
 {C:/Users/loren/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
-[2] (informe.aux
+[2]
+
+[3]
+
+[4]
+
+[5] (informe.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -434,17 +444,17 @@ Package rerunfilecheck Warning: File `informe.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `informe.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  161F538E4F9F44B65DB83CE887063891;2687.
+(rerunfilecheck)             Before: FB32EA8EAE555BE38510E608C90F726A;4684
+(rerunfilecheck)             After:  47DC7856CBA4353476744FF15D2C83E7;4847.
  ) 
 Here is how much of TeX's memory you used:
- 11108 strings out of 473903
- 175018 string characters out of 5726579
+ 11156 strings out of 473903
+ 175822 string characters out of 5726579
  1940908 words of memory out of 5000000
- 33850 multiletter control sequences out of 15000+600000
+ 33877 multiletter control sequences out of 15000+600000
  563452 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,240b,457s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,79p,432b,520s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/loren/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb><C:/Users/loren/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmbx12.pfb><C:/Users/loren/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -452,9 +462,9 @@ ublic/amsfonts/cm/cmr10.pfb><C:/Users/loren/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmr12.pfb><C:/Users/loren/AppData/Local/Programs/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/loren/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on informe.pdf (2 pages, 92880 bytes).
+Output written on informe.pdf (5 pages, 113688 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
- 13 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 148 PDF objects out of 1000 (max. 8388607)
+ 28 named destinations out of 1000 (max. 500000)
+ 169 words of extra memory for PDF output out of 10000 (max. 10000000)
 
