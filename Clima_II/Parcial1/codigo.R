@@ -150,6 +150,7 @@ for(i in indices_na){
 tmax<-read_csv("./1ra_Fecha/Tmax_LP.csv")
 indices<-read_csv("./1ra_Fecha/Indices.csv")
 
+#a)-----------
 tmax%>%ggplot(aes(x=Anio,y=Media))+
   geom_line(color="red")+
   geom_abline(slope=pendiente,intercept=ordenada,color="gray")+
@@ -165,17 +166,50 @@ modelo<-lm(Media~Anio,data=tmax)
 pendiente<-modelo$coefficients[2]
 ordenada<-modelo$coefficients[1]
 
+# Para ver si es estadísticamente significativa, hago un test de correlación 
+# entre los valores observados y el tiempo.
+# Si existe correlación significa que hay una tendencia. Utilizo un nivel de
+# significancia de alpha = 0.05.
+
+cor.test(tmax$Media,tmax$Anio)
+
+# La salida nos dice que el p-value<alpha, por lo tanto puedo rechazar la hipótesis
+# nula en favor de la alternativa (la correlación es significativamente distinta de 0)
+# por lo tanto, existe una tendencia lineal.
+
+# Para filtrar la tendencia, reemplazo los datos de Tmax, por la media
+# más el residuo del modelo.
+
+#tfilt<-vector(length = nrow(tmax))
+#for(i in 1:31){
+#  tfilt[i]<-mean(tmax$Media)+modelo$residuals[i]
+#}
+#
+#tmax<-mutate(tmax,Filtrada=tfilt)
+
+# PUEDE HACERSE SIN UN FOR, USANDO LA FORMULA EN MUTATE
 
 
+tmax<-mutate(tmax,Filtrada=tmax$Media-(ordenada+tmax$Anio*pendiente)+mean(tmax$Media))
 
-#b)
+tmax%>%ggplot(aes(x=Anio,y=Filtrada))+
+  geom_line(color="brown")+
+  labs(title="Serie temporal de temperatura media La Plata AERO",
+       subtitle = "Meses de Noviembre-Diciembre. (Con la tendencia filtrada)",
+       x = "Año",
+       y = "Tmax [°C]")+
+  theme_bw()
+
+
+#b)------------
 library(fitdistrplus)
 library(moments)
 
 #realizo el grafico de funcion de densidad empirica de tmax.
-tmax%>%ggplot(aes(x=Media))+
+tmax%>%ggplot(aes(x=Filtrada))+
   geom_density(color="red")+
-  labs(title = "Función de densidadd de probabilidad empírica",
+  labs(title = "Función de densidad de probabilidad empírica",
+       subtitle = "Tmax con tendencia filtrada",
        x = "Tmax [°C]",
        y = "Frecuencia relativa")+
   theme_bw()
@@ -184,4 +218,5 @@ tmax%>%ggplot(aes(x=Media))+
 # ajusto a una normal con el método de máxima verosimilutd utilizando la
 # librería fitdistrplus
 
-fitdist(tmax$Media,distr = normal,method = "mle")
+parametros<-mledist(tmax$Filtrada,distr = "norm")$estimate;parametros
+
