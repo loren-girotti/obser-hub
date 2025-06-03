@@ -93,10 +93,19 @@ pp_periodo <- PPext_filtrada %>% filter(Anio %in% 1991:2020)
 
 cor_test_result<-tibble(c("DMI","Nino12","Nino34","Nino4","SAM"),"p-value")
 
+
 names(cor_test_result)=c("Indice","p-value")
 
 cor_test_result <- cor_test_result %>% mutate(`p-value`=0)
 
+pvalues<-as.numeric(vector(length = 5))
+
+for (i in pvalues) {
+  pvalues[i]<-cor.test(x=pp_periodo$Filtrada,y=indices_periodo[,i+1],method = "spearman")$p.value
+}
+
+length(pp_periodo$Filtrada)
+length(indices_periodo[,2])
 
 pvDMI<-cor.test(x=pp_periodo$Filtrada,y=indices_periodo$DMI,method = "spearman")$p.value
 pvNino12<-cor.test(x=pp_periodo$Filtrada,y=indices_periodo$Niño12,method = "spearman")$p.value
@@ -104,11 +113,13 @@ pvNino34<-cor.test(x=pp_periodo$Filtrada,y=indices_periodo$Niño34,method = "spe
 pvNino4<-cor.test(x=pp_periodo$Filtrada,y=indices_periodo$Niño4,method = "spearman")$p.value
 pvSAM<-cor.test(x=pp_periodo$Filtrada,y=indices_periodo$SAM,method = "spearman")$p.value
 
+for(i in 1:5){
 cor_test_result[1,2]<-pvDMI
 cor_test_result[2,2]<-pvNino12
 cor_test_result[3,2]<-pvNino34
 cor_test_result[4,2]<-pvNino4
 cor_test_result[5,2]<-pvSAM
+}
 
 # SE PUEDE HACER CON UN FOR LOOP pero me trabe y no me daba el tiempo.
 
