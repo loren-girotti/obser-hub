@@ -38,4 +38,18 @@ modelo <- lm(Media ~ Anio_Est, data = serie_est)
 ordenada <- modelo$coefficients[1]
 pendiente <- modelo$coefficients[2]
 
-plot + geom_abline(slope = pendiente,intercept = ordenada)
+plot<-plot + geom_abline(slope = pendiente,intercept = ordenada)
+
+# A simple vista no parece ser una tendencia significativa, pero para eso realicemos
+# un test de correlación con un nivel de significancia de 0.05, bajo la hipótesis
+# nula de que la correlación es 0, y la alternativa que es menor que 0:
+
+cor_pvalue<-cor.test(serie_est$Media,serie_est$Anio_Est,alternative = "less")$p.value
+
+# Como vemos, el pvalue es de 0.42 lo cual indica que no puedo rechazar la hipótesis
+# nula: "la correlación entre la variable y el tiempo es 0".
+
+plot + annotate("text", x = mean(serie_est$Anio_Est), y = max(serie_est$Media),
+                label = paste0("p = ", signif(cor_pvalue,3)),
+                hjust=0,vjust=1,size=4,color="black")
+
