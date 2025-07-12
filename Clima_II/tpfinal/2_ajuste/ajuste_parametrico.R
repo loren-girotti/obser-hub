@@ -89,11 +89,7 @@ D_mc <- replicate(n=100000L, {
   max(abs(F_e - F_t)) # <--- Valor de D la simulacion
 })
 
-(p_value<-mean(D_mc >= D))
+(p_value<-mean(D_mc >= D)) # <- 0.97488
 
-D_ecdf <- ecdf(D_mc)
-
-1-D_ecdf(D)
-
-
-ks.test(serie_est$Media, "pnorm")
+# ES DECIR QUE NO PUEDO RECHAZAR LA HIPÓTESIS NULA: que mi muestra proviene
+# de una normal.
