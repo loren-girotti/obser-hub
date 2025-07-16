@@ -76,9 +76,9 @@ serie_est_acum<-mutate(serie_est,F_e=rank(serie_est$Media)/nrow(serie_est),
 # Calculo de D:
 D <- max(abs(serie_est_acum$F_e - serie_est_acum$F_t))
 
-# Con alpha=0.1
+# Con alpha=0.05
 
-C <- 1.224/(sqrt(nrow(serie_est))+0.12+(0.11/sqrt(nrow(serie_est))))
+C <- 1.358/(sqrt(nrow(serie_est))+0.12+(0.11/sqrt(nrow(serie_est))))
 
 # Hago un procedimiento de Monte-Carlo para testear el ajuste, generando 1000000 simulaciones:
 
