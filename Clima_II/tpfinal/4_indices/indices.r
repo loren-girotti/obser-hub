@@ -24,7 +24,7 @@ indices <- read_csv("./df_indices.csv") %>%  mutate("Anio_Est"=ifelse(Mes==12,An
 
 sam <- indices %>% group_by(Anio_Est) %>% summarise("sam"=mean(sam))
 
-oni <- read_csv("./oni.csv") %>% filter(anio %in% 1986:2005)
+oni <- read_csv("./oni.csv") %>% filter(Anio %in% 1986:2005)
 
 dmi <- read_csv("./dmi_had_long.csv") %>% 
   mutate("Mes"=month(ymd(Date)),"Anio"=year(ymd(Date)),"Anio_Est"=ifelse(Mes==12,Anio+1,Anio)) %>%
