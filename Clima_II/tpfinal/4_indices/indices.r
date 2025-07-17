@@ -98,34 +98,25 @@ test_cor(sam,"two.sided") # CLARAMENTE NO HAY CORRELACION
 test_cor(dmi,"less") # No podemos rechazar que no haya correlación negativa
 
 # EVALUO LA HOMOCEDASTICIDAD DE LOS MODELOS DE ONI Y DMI
+# Grafico de dispersión entre los valores predictores y los residuos
 
-homo_tb <- function(modelo){
-  resultado <- tibble("valores_ajustados"=modelo$fitted.values,
-                      "residuos"=modelo$residuals)
-  return(resultado)
-}
-
-# Grafico de dispersión entre los valores y los residuos
-
-homo_oni<-homo_tb(lm_oni)
-
-homo_oni %>% ggplot(aes(x=valores_ajustados,y=residuos))+
+df <- df %>% mutate("res_oni"=lm_oni$residuals,
+                    "res_dmi"=lm_dmi$residuals)
+df %>% ggplot(aes(x=oni,y=res_oni))+
   geom_point(color="red")+
   geom_hline(yintercept = 0)+
   labs(title = "Análisis de homocedasticidad",
        subtitle = "Modelo de regresión lineal simple | Predictor: ONI",
-       x="Temp Ajustada por el Modelo [°C]",
+       x="ONI",
        y="Residuos [°C]")+
   theme_bw()  
 
-homo_dmi <- homo_tb(lm_dmi)
 
-homo_dmi %>% ggplot(aes(x=valores_ajustados,y=residuos))+
+df %>% ggplot(aes(x=dmi,y=res_dmi))+
   geom_point(color="green4")+
   geom_hline(yintercept = 0)+
   labs(title = "Análisis de homocedasticidad",
        subtitle = "Modelo de regresión lineal simple | Predictor: DMI",
-       x="Temp Ajustada por el Modelo [°C]",
+       x="DMI",
        y="Residuos [°C]")+
   theme_bw()  
-
