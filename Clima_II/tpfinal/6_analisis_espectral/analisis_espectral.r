@@ -124,17 +124,15 @@ ruido <- function(x,m,alpha){
 
 ruido_0 <- ruido(x=serie_est$Media, m = 0, alpha = 0.95)
 
-ruido_1 <- ruido(x=serie_est$Media, m = 1, alpha = 0.95)
 
 # Construyo un Tibble con la data:
 datos <-  tibble(Serie = amplitud**2,
                  Periodo = factor(periodos, levels = periodos),
                  Periodos_num = periodos,
-                 Rechazo_95_Ar0= ruido_0$ss_alpha,
-                 Rechazo_95_Ar1= ruido_1$ss_alpha)
+                 Rechazo_95_Ar0= ruido_0$ss_alpha)
 
 datos_long<-datos %>%
-  pivot_longer(cols = c('Serie', 'Rechazo_95_Ar0', 'Rechazo_95_Ar1'), names_to = 'Referencia', values_to = 'Potencia')
+  pivot_longer(cols = c('Serie', 'Rechazo_95_Ar0'), names_to = 'Referencia', values_to = 'Potencia')
 
 id<- which(datos$Serie>datos$Rechazo_95_Ar0)
 
@@ -145,6 +143,6 @@ datos_long %>%
   theme_bw()+
   ylab('Potencia Espectral')+
   xlab('Periodo [Años]')+
-  scale_color_manual(values=c('red', 'blue', 'black'))+
-  scale_linetype_manual(values = c(3,2,1))+
+  scale_color_manual(values=c('red', 'black'))+
+  scale_linetype_manual(values = c(2,1))+
   labs(title="Contraste del espectro empírico contra ruido teórico")

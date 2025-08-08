@@ -19,6 +19,9 @@ serie_est <- serie %>% filter(Mes %in% c(12,1,2), Anio_Est %in% 1986:2005) %>%
   group_by(Anio_Est) %>%
   summarise("Media"=mean(temp))
 
+#abro el archivo .nc
+nc<-nc_open("GH850.nc")
+
 #dimensiones
 
 nc[["dim"]]
@@ -73,8 +76,8 @@ matriz.sign <- matrix(NA, nrow = dim(gh.850)[1], ncol = dim(gh.850)[2])
 
 for (i in 1:dim(gh.850)[1]) {
   for (j in 1:dim(gh.850)[2]) {
-    matriz.cor[i, j] <- cor.test(gh.850[i, j, ],hr.media)$estimate
-    matriz.sign[i, j] <- cor.test(gh.850[i, j, ],hr.media)$p.value<0.05
+    matriz.cor[i, j] <- cor.test(gh.850[i, j, ],temp_media)$estimate
+    matriz.sign[i, j] <- cor.test(gh.850[i, j, ],temp_media)$p.value<0.05
   }
 }
 
@@ -97,12 +100,12 @@ gh.cor.grafico %>%
   geom_raster(aes(fill = Correlacion),interpolate = T)+
   scale_fill_gradient2(low = "#2166AC",high = "#B2182B")+
   geom_contour_fill(data = filter(gh.cor.grafico, Significancia),
-                    aes(x = lon, y = as.numeric(lat)), size = 1, color = "black", linetype = 2,)+
+                    aes(x = lon, y = as.numeric(lat)), size = 1, color = "black", linetype = 2)+
   geom_contour(col='black',binwidth = 0.1)+geom_text_contour(stroke = 0.2)+
   geom_polygon(data=map.world, aes(x=long, y=lat, group=group),inherit.aes = F,
                color="black", linewidth = 0.9,alpha=0)+
   scale_x_longitude(ticks = 10)+
   scale_y_latitude(ticks = 10)+
   coord_fixed(xlim = c(-100,-30), ylim = c(-60,-10), ratio = 1.3)+
-  labs(title = "Correlacion entre la humedad relativa y el\ngeopotencial en 850hP")+
+  labs(title = "Correlacion entre la temperatura y el geopotencial en 850hPa")+
   theme_bw()
